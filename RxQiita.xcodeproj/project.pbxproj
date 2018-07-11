@@ -8,11 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		5D1E9B0620F63EA0008EEC87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E9B0520F63EA0008EEC87 /* AppDelegate.swift */; };
-		5D1E9B0820F63EA0008EEC87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E9B0720F63EA0008EEC87 /* ViewController.swift */; };
-		5D1E9B0B20F63EA0008EEC87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1E9B0920F63EA0008EEC87 /* Main.storyboard */; };
 		5D1E9B0D20F63EA4008EEC87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D1E9B0C20F63EA4008EEC87 /* Assets.xcassets */; };
 		5D1E9B1020F63EA4008EEC87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1E9B0E20F63EA4008EEC87 /* LaunchScreen.storyboard */; };
 		5D1E9B1B20F63EA4008EEC87 /* RxQiitaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E9B1A20F63EA4008EEC87 /* RxQiitaTests.swift */; };
+		5D1E9B2920F64DE2008EEC87 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B2820F64DE2008EEC87 /* Alamofire.framework */; };
+		5D1E9B2B20F64E00008EEC87 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B2A20F64E00008EEC87 /* Moya.framework */; };
+		5D1E9B2F20F64E66008EEC87 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B2E20F64E66008EEC87 /* RxMoya.framework */; };
+		5D1E9B3120F64E83008EEC87 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3020F64E83008EEC87 /* RxSwift.framework */; };
+		5D1E9B3320F64E99008EEC87 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3220F64E99008EEC87 /* Result.framework */; };
+		5D1E9B3520F64EBF008EEC87 /* QiitaAPIManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3420F64EBF008EEC87 /* QiitaAPIManager.framework */; };
+		5D1E9B3720F64EDE008EEC87 /* Hero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3620F64EDE008EEC87 /* Hero.framework */; };
+		5D1E9B3920F64EFC008EEC87 /* PinLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3820F64EFC008EEC87 /* PinLayout.framework */; };
+		5D1E9B3B20F64F23008EEC87 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3A20F64F23008EEC87 /* RxCocoa.framework */; };
+		5D1E9B3D20F64F3A008EEC87 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3C20F64F3A008EEC87 /* Swinject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +36,23 @@
 /* Begin PBXFileReference section */
 		5D1E9B0220F63EA0008EEC87 /* RxQiita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxQiita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D1E9B0520F63EA0008EEC87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D1E9B0720F63EA0008EEC87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5D1E9B0A20F63EA0008EEC87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D1E9B0C20F63EA4008EEC87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D1E9B0F20F63EA4008EEC87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D1E9B1120F63EA4008EEC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D1E9B1620F63EA4008EEC87 /* RxQiitaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxQiitaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D1E9B1A20F63EA4008EEC87 /* RxQiitaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxQiitaTests.swift; sourceTree = "<group>"; };
 		5D1E9B1C20F63EA4008EEC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D1E9B2820F64DE2008EEC87 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		5D1E9B2A20F64E00008EEC87 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		5D1E9B2C20F64E31008EEC87 /* ReactiveMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveMoya.framework; path = Carthage/Build/iOS/ReactiveMoya.framework; sourceTree = "<group>"; };
+		5D1E9B2E20F64E66008EEC87 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
+		5D1E9B3020F64E83008EEC87 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		5D1E9B3220F64E99008EEC87 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		5D1E9B3420F64EBF008EEC87 /* QiitaAPIManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QiitaAPIManager.framework; path = Carthage/Build/iOS/QiitaAPIManager.framework; sourceTree = "<group>"; };
+		5D1E9B3620F64EDE008EEC87 /* Hero.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hero.framework; path = Carthage/Build/iOS/Hero.framework; sourceTree = "<group>"; };
+		5D1E9B3820F64EFC008EEC87 /* PinLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PinLayout.framework; path = Carthage/Build/iOS/PinLayout.framework; sourceTree = "<group>"; };
+		5D1E9B3A20F64F23008EEC87 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		5D1E9B3C20F64F3A008EEC87 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +60,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1E9B3D20F64F3A008EEC87 /* Swinject.framework in Frameworks */,
+				5D1E9B3B20F64F23008EEC87 /* RxCocoa.framework in Frameworks */,
+				5D1E9B3920F64EFC008EEC87 /* PinLayout.framework in Frameworks */,
+				5D1E9B3720F64EDE008EEC87 /* Hero.framework in Frameworks */,
+				5D1E9B3520F64EBF008EEC87 /* QiitaAPIManager.framework in Frameworks */,
+				5D1E9B3320F64E99008EEC87 /* Result.framework in Frameworks */,
+				5D1E9B3120F64E83008EEC87 /* RxSwift.framework in Frameworks */,
+				5D1E9B2F20F64E66008EEC87 /* RxMoya.framework in Frameworks */,
+				5D1E9B2B20F64E00008EEC87 /* Moya.framework in Frameworks */,
+				5D1E9B2920F64DE2008EEC87 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +89,7 @@
 				5D1E9B0420F63EA0008EEC87 /* RxQiita */,
 				5D1E9B1920F63EA4008EEC87 /* RxQiitaTests */,
 				5D1E9B0320F63EA0008EEC87 /* Products */,
+				5D1E9B2720F64DE1008EEC87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,8 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				5D1E9B0520F63EA0008EEC87 /* AppDelegate.swift */,
-				5D1E9B0720F63EA0008EEC87 /* ViewController.swift */,
-				5D1E9B0920F63EA0008EEC87 /* Main.storyboard */,
 				5D1E9B0C20F63EA4008EEC87 /* Assets.xcassets */,
 				5D1E9B0E20F63EA4008EEC87 /* LaunchScreen.storyboard */,
 				5D1E9B1120F63EA4008EEC87 /* Info.plist */,
@@ -96,6 +122,24 @@
 			path = RxQiitaTests;
 			sourceTree = "<group>";
 		};
+		5D1E9B2720F64DE1008EEC87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D1E9B3C20F64F3A008EEC87 /* Swinject.framework */,
+				5D1E9B3A20F64F23008EEC87 /* RxCocoa.framework */,
+				5D1E9B3820F64EFC008EEC87 /* PinLayout.framework */,
+				5D1E9B3620F64EDE008EEC87 /* Hero.framework */,
+				5D1E9B3420F64EBF008EEC87 /* QiitaAPIManager.framework */,
+				5D1E9B3220F64E99008EEC87 /* Result.framework */,
+				5D1E9B3020F64E83008EEC87 /* RxSwift.framework */,
+				5D1E9B2E20F64E66008EEC87 /* RxMoya.framework */,
+				5D1E9B2C20F64E31008EEC87 /* ReactiveMoya.framework */,
+				5D1E9B2A20F64E00008EEC87 /* Moya.framework */,
+				5D1E9B2820F64DE2008EEC87 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +150,8 @@
 				5D1E9AFE20F63EA0008EEC87 /* Sources */,
 				5D1E9AFF20F63EA0008EEC87 /* Frameworks */,
 				5D1E9B0020F63EA0008EEC87 /* Resources */,
+				5D1E9B2520F64079008EEC87 /* ShellScript */,
+				5D1E9B2620F64D43008EEC87 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -179,7 +225,6 @@
 			files = (
 				5D1E9B1020F63EA4008EEC87 /* LaunchScreen.storyboard in Resources */,
 				5D1E9B0D20F63EA4008EEC87 /* Assets.xcassets in Resources */,
-				5D1E9B0B20F63EA0008EEC87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,12 +237,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D1E9B2520F64079008EEC87 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		5D1E9B2620F64D43008EEC87 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5D1E9AFE20F63EA0008EEC87 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D1E9B0820F63EA0008EEC87 /* ViewController.swift in Sources */,
 				5D1E9B0620F63EA0008EEC87 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,14 +294,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5D1E9B0920F63EA0008EEC87 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5D1E9B0A20F63EA0008EEC87 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5D1E9B0E20F63EA4008EEC87 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -360,6 +425,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ4R56398;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxQiita/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -378,6 +447,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ4R56398;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxQiita/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
