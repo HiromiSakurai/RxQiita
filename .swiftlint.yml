@@ -1,0 +1,78 @@
+#
+# SwiftLint rules
+#
+
+disabled_rules: # rule identifiers to exclude from running
+  - multiple_closures_with_trailing_closure
+  - operator_usage_whitespace
+  - trailing_whitespace
+  - todo
+  - attributes
+  - line_length
+  - fallthrough
+  - nesting
+#  - colon
+#  - comma
+#  - control_statement
+opt_in_rules: # some rules are only opt-in
+  - control_statement
+  - force_unwrapping
+  - attributes
+  - closure_spacing
+  - first_where
+  - explicit_type_interface
+  - operator_usage_whitespace
+  - switch_case_on_newline
+#  - empty_count
+  # Find all the available rules by running:
+  # swiftlint rules
+#included: # paths to include during linting. `--path` is ignored if present.
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - ${SRCROOT}/Carthage
+  - ${SRCROOT}/Submodules
+  - ${SRCROOT}/${PROJECT_NAME}Tests
+  - ${SRCROOT}/${PROJECT_NAME}UITests
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+#line_length: 150
+# they can set both implicitly with an array
+type_body_length:
+  - 450 # warning
+  - 600 # error
+# or they can set both explicitly
+file_length:
+  warning: 500
+  error: 1200
+#
+function_body_length:
+  warning: 60
+  error: 100
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 4 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+  excluded: iPhone # excluded via string
+identifier_name:
+  allowed_symbols: "_"
+  min_length: # only min_length
+    warning: 0
+    error: 0 # only error
+  excluded: # excluded via string array
+    - id
+    - URL
+    - GlobalAPIKey
+cyclomatic_complexity:
+    ignores_case_statements: true
+explicit_type_interface:
+  excluded: # excluded via string array
+    - local
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji)
+
