@@ -34,8 +34,7 @@ class ArticleListUsecaseTest: XCTestCase {
     func testGetArticleListStream() {
         let exp = expectation(description: "get article list stream")
         usecase.getArticleListStream()
-            .subscribe(onNext: { model in
-                print(model)
+            .subscribe(onNext: { _ in
                 exp.fulfill()
             }, onError: { error in
                 XCTAssert(false, error.localizedDescription)
