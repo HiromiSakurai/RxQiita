@@ -10,7 +10,6 @@
 		5D1E9B0620F63EA0008EEC87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E9B0520F63EA0008EEC87 /* AppDelegate.swift */; };
 		5D1E9B0D20F63EA4008EEC87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D1E9B0C20F63EA4008EEC87 /* Assets.xcassets */; };
 		5D1E9B1020F63EA4008EEC87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1E9B0E20F63EA4008EEC87 /* LaunchScreen.storyboard */; };
-		5D1E9B1B20F63EA4008EEC87 /* RxQiitaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E9B1A20F63EA4008EEC87 /* RxQiitaTests.swift */; };
 		5D1E9B2920F64DE2008EEC87 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B2820F64DE2008EEC87 /* Alamofire.framework */; };
 		5D1E9B2B20F64E00008EEC87 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B2A20F64E00008EEC87 /* Moya.framework */; };
 		5D1E9B2F20F64E66008EEC87 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B2E20F64E66008EEC87 /* RxMoya.framework */; };
@@ -21,6 +20,12 @@
 		5D1E9B3920F64EFC008EEC87 /* PinLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3820F64EFC008EEC87 /* PinLayout.framework */; };
 		5D1E9B3B20F64F23008EEC87 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3A20F64F23008EEC87 /* RxCocoa.framework */; };
 		5D1E9B3D20F64F3A008EEC87 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3C20F64F3A008EEC87 /* Swinject.framework */; };
+		5D1E9B4120F7C597008EEC87 /* ArticleListUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E9B4020F7C597008EEC87 /* ArticleListUsecase.swift */; };
+		5D1E9B4320F7CAB8008EEC87 /* ArticleListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E9B4220F7CAB8008EEC87 /* ArticleListModel.swift */; };
+		5D5AAEFD20F8B163008641B9 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5AAEFC20F8B163008641B9 /* String+extensions.swift */; };
+		5D5AAF0C20F92098008641B9 /* ArticleListUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5AAF0B20F92098008641B9 /* ArticleListUsecaseTest.swift */; };
+		5D5AAF0E20F92619008641B9 /* QiitaAPIManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3420F64EBF008EEC87 /* QiitaAPIManager.framework */; };
+		5D5AAF0F20F92628008641B9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3020F64E83008EEC87 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +45,6 @@
 		5D1E9B0F20F63EA4008EEC87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D1E9B1120F63EA4008EEC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D1E9B1620F63EA4008EEC87 /* RxQiitaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxQiitaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D1E9B1A20F63EA4008EEC87 /* RxQiitaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxQiitaTests.swift; sourceTree = "<group>"; };
 		5D1E9B1C20F63EA4008EEC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D1E9B2820F64DE2008EEC87 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5D1E9B2A20F64E00008EEC87 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
@@ -53,6 +57,10 @@
 		5D1E9B3820F64EFC008EEC87 /* PinLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PinLayout.framework; path = Carthage/Build/iOS/PinLayout.framework; sourceTree = "<group>"; };
 		5D1E9B3A20F64F23008EEC87 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		5D1E9B3C20F64F3A008EEC87 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
+		5D1E9B4020F7C597008EEC87 /* ArticleListUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListUsecase.swift; sourceTree = "<group>"; };
+		5D1E9B4220F7CAB8008EEC87 /* ArticleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListModel.swift; sourceTree = "<group>"; };
+		5D5AAEFC20F8B163008641B9 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
+		5D5AAF0B20F92098008641B9 /* ArticleListUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleListUsecaseTest.swift; path = RxQiitaTests/ArticleList/ArticleListUsecaseTest.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5AAF0F20F92628008641B9 /* RxSwift.framework in Frameworks */,
+				5D5AAF0E20F92619008641B9 /* QiitaAPIManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +115,8 @@
 		5D1E9B0420F63EA0008EEC87 /* RxQiita */ = {
 			isa = PBXGroup;
 			children = (
+				5D1E9B3E20F7C272008EEC87 /* Scenes */,
+				5D5AAEFB20F8AFBD008641B9 /* Extensions */,
 				5D1E9B0520F63EA0008EEC87 /* AppDelegate.swift */,
 				5D1E9B0C20F63EA4008EEC87 /* Assets.xcassets */,
 				5D1E9B0E20F63EA4008EEC87 /* LaunchScreen.storyboard */,
@@ -116,7 +128,7 @@
 		5D1E9B1920F63EA4008EEC87 /* RxQiitaTests */ = {
 			isa = PBXGroup;
 			children = (
-				5D1E9B1A20F63EA4008EEC87 /* RxQiitaTests.swift */,
+				5D5AAF0A20F91FE1008641B9 /* ArticleList */,
 				5D1E9B1C20F63EA4008EEC87 /* Info.plist */,
 			);
 			path = RxQiitaTests;
@@ -138,6 +150,40 @@
 				5D1E9B2820F64DE2008EEC87 /* Alamofire.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D1E9B3E20F7C272008EEC87 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5D1E9B3F20F7C297008EEC87 /* ArticleList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5D1E9B3F20F7C297008EEC87 /* ArticleList */ = {
+			isa = PBXGroup;
+			children = (
+				5D1E9B4020F7C597008EEC87 /* ArticleListUsecase.swift */,
+				5D1E9B4220F7CAB8008EEC87 /* ArticleListModel.swift */,
+			);
+			path = ArticleList;
+			sourceTree = "<group>";
+		};
+		5D5AAEFB20F8AFBD008641B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5D5AAEFC20F8B163008641B9 /* String+extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5D5AAF0A20F91FE1008641B9 /* ArticleList */ = {
+			isa = PBXGroup;
+			children = (
+				5D5AAF0B20F92098008641B9 /* ArticleListUsecaseTest.swift */,
+			);
+			name = ArticleList;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +241,7 @@
 					};
 					5D1E9B1520F63EA4008EEC87 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 						TestTargetID = 5D1E9B0120F63EA0008EEC87;
 					};
 				};
@@ -257,6 +304,16 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Swinject.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PinLayout.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Hero.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/QiitaAPIManager.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 			);
 			outputPaths = (
 			);
@@ -271,6 +328,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5AAEFD20F8B163008641B9 /* String+extensions.swift in Sources */,
+				5D1E9B4120F7C597008EEC87 /* ArticleListUsecase.swift in Sources */,
+				5D1E9B4320F7CAB8008EEC87 /* ArticleListModel.swift in Sources */,
 				5D1E9B0620F63EA0008EEC87 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D1E9B1B20F63EA4008EEC87 /* RxQiitaTests.swift in Sources */,
+				5D5AAF0C20F92098008641B9 /* ArticleListUsecaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,8 +528,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ4R56398;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxQiitaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -478,6 +543,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hiromi-sakurai.RxQiitaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxQiita.app/RxQiita";
@@ -489,8 +555,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NNJ4R56398;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RxQiitaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -20,7 +20,7 @@ opt_in_rules: # some rules are only opt-in
   - attributes
   - closure_spacing
   - first_where
-  - explicit_type_interface
+#  - explicit_type_interface
   - operator_usage_whitespace
   - switch_case_on_newline
 #  - empty_count
