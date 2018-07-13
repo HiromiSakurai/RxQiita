@@ -23,7 +23,7 @@ final class ArticleListUsecase {
         static let emptyStrig: String = ""
     }
 
-    private let qiitaClient: QiitaClient
+    private let qiitaClient: QiitaClientProtocol
 
     private var currentQuery: String = Const.emptyStrig
     private var nextPage: Int = Const.nextPageIndex
@@ -31,7 +31,7 @@ final class ArticleListUsecase {
     private let modelPublishSubject = PublishSubject<ArticleListModel>()
     private let disposeBag = DisposeBag()
 
-    init(qiitaClient: QiitaClient) {
+    init(qiitaClient: QiitaClientProtocol) {
         self.qiitaClient = qiitaClient
     }
 
