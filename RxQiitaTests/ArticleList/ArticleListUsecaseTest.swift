@@ -14,6 +14,7 @@ import RxSwift
 class ArticleListUsecaseTest: XCTestCase {
 
     var qiitaClient: QiitaClient!
+    var mapper: ArticleListModelMapper!
 
     var usecase: ArticleListUsecaseProtocol!
 
@@ -22,11 +23,13 @@ class ArticleListUsecaseTest: XCTestCase {
     override func setUp() {
         super.setUp()
         qiitaClient = QiitaClient()
-        usecase = ArticleListUsecase(qiitaClient: qiitaClient)
+        mapper = ArticleListModelMapper()
+        usecase = ArticleListUsecase(qiitaClient: qiitaClient, mapper: mapper)
     }
 
     override func tearDown() {
         qiitaClient = nil
+        mapper = nil
         usecase = nil
         super.tearDown()
     }
