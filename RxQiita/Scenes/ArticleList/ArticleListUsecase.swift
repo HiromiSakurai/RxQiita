@@ -24,6 +24,7 @@ final class ArticleListUsecase {
     }
 
     private let qiitaClient: QiitaClientProtocol
+    private let mapper: ArticleListModelMapper
 
     private var currentQuery: String = Const.emptyStrig
     private var nextPage: Int = Const.nextPageIndex
@@ -31,8 +32,9 @@ final class ArticleListUsecase {
     private let modelPublishSubject = PublishSubject<ArticleListModel>()
     private let disposeBag = DisposeBag()
 
-    init(qiitaClient: QiitaClientProtocol) {
+    init(qiitaClient: QiitaClientProtocol, mapper: ArticleListModelMapper) {
         self.qiitaClient = qiitaClient
+        self.mapper = mapper
     }
 
     private func fetchArticleList(searchQuery: String, isAdditional: Bool) {
@@ -40,7 +42,7 @@ final class ArticleListUsecase {
         let page: Int = isAdditional ? nextPage : Const.firstPageIndex
         qiitaClient.fetchArticles(searchQuery: query, page: page)
             .map { [weak self] articles -> ArticleListModel? in
-                return self?.transform(articles: articles)
+                return self?.mapper.transform(articles: articles)
             }
             .subscribe(onSuccess: {[weak self] model in
                 guard let model = model, let s = self else { return }
@@ -50,22 +52,6 @@ final class ArticleListUsecase {
                 print(error) // TODO: need impl error handling
             })
             .disposed(by: disposeBag)
-    }
-
-    private func transform(articles: [Article]) -> ArticleListModel {
-        let articles =  articles.map { article -> ArticleListModel.Article? in
-            guard let id = article.id else { return nil }
-            let contributor = ArticleListModel.Contributor(name: article.user?.name,
-                                                           profileImageURL: article.user?.profileImageUrl)
-            return ArticleListModel.Article(id: id,
-                                            title: article.title,
-                                            contributor: contributor,
-                                            renderedBody: article.renderedBody,
-                                            body: article.body,
-                                            createdAt: article.createdAt.nonNil.toDate(),
-                                            updatedAt: article.updatedAt.nonNil.toDate())
-            }.compactMap { $0 }
-        return ArticleListModel(articles: articles)
     }
 }
 
