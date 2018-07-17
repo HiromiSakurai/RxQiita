@@ -11,7 +11,9 @@ import Foundation
 extension String {
     func toDate() -> Date? {
         let formmater = DateFormatter()
-        formmater.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        formmater.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyy-MM-dd'T'HH:mm:ssZZZZZ",
+                                                        options: 0,
+                                                        locale: Locale(identifier: "en_US_POSIX"))
         return formmater.date(from: self)
     }
 }
