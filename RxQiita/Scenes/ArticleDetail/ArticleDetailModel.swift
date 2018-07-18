@@ -10,6 +10,6 @@ import Foundation
 import QiitaAPIManager
 
 struct ArticleDetailModel {
-    let id: String
-    let url: String
+    let id: String?
+    let url: String?
 }
