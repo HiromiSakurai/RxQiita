@@ -123,6 +123,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D06F72B210A006900A4FA22 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D1E9B4220F7CAB8008EEC87 /* ArticleListModel.swift */,
+				5D06F7292109FEAB00A4FA22 /* ArticleListTableCellModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5D06F72C210A00DE00A4FA22 /* Translators */ = {
+			isa = PBXGroup;
+			children = (
+				5D128B3820FDAB9800005A31 /* ArticleListModelMapper.swift */,
+				5D06F71F2109D86B00A4FA22 /* ArticleListViewModelMapper.swift */,
+			);
+			path = Translators;
+			sourceTree = "<group>";
+		};
 		5D128B4120FF038B00005A31 /* ArticleDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,12 +234,10 @@
 		5D1E9B3F20F7C297008EEC87 /* ArticleList */ = {
 			isa = PBXGroup;
 			children = (
+				5D06F72C210A00DE00A4FA22 /* Translators */,
+				5D06F72B210A006900A4FA22 /* Models */,
 				5D1E9B4020F7C597008EEC87 /* ArticleListUsecase.swift */,
-				5D1E9B4220F7CAB8008EEC87 /* ArticleListModel.swift */,
-				5D128B3820FDAB9800005A31 /* ArticleListModelMapper.swift */,
-				5D06F71F2109D86B00A4FA22 /* ArticleListViewModelMapper.swift */,
 				5D06F7272109F27400A4FA22 /* ArticleListViewModel.swift */,
-				5D06F7292109FEAB00A4FA22 /* ArticleListTableCellModel.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
