@@ -32,6 +32,7 @@ class ArticleListViewModelMapperTest: XCTestCase {
         XCTAssertEqual(tableCellModel.first?.id, "id")
         XCTAssertEqual(tableCellModel.first?.title, "title")
         XCTAssertEqual(tableCellModel.first?.contributor, "contributor")
+        XCTAssertEqual(tableCellModel.first?.likesCount, "20")
     }
 
     enum ModelFactory {
@@ -42,6 +43,7 @@ class ArticleListViewModelMapperTest: XCTestCase {
                                                    contributor: contributor,
                                                    renderedBody: nil,
                                                    body: nil,
+                                                   likesCount: 20,
                                                    createdAt: nil,
                                                    updatedAt: nil)
             return ArticleListModel(articles: [article, article])

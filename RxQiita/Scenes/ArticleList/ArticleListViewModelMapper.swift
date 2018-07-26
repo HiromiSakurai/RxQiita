@@ -16,6 +16,7 @@ final class ArticleListViewModelMapper {
             return ArticleListTableCellModel(id: article.id,
                                              title: article.title ?? "",
                                              contributor: article.contributor?.name ?? "",
+                                             likesCount: String(article.likesCount ?? 0),
                                              createdAt: stringFrom(date: article.createdAt))
 
         }
@@ -32,5 +33,6 @@ struct ArticleListTableCellModel {
     let id: String
     let title: String
     let contributor: String
+    let likesCount: String
     let createdAt: String
 }

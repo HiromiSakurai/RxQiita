@@ -37,6 +37,7 @@ class ArticleListModelMapperTest: XCTestCase {
         XCTAssertEqual(firstArticle.contributor?.profileImageURL, "profileImageUrl")
         XCTAssertEqual(firstArticle.renderedBody, "renderedBody")
         XCTAssertEqual(firstArticle.body, "body")
+        XCTAssertEqual(firstArticle.likesCount, 20)
         XCTAssertNotNil(firstArticle.createdAt)
         XCTAssertNotNil(firstArticle.updatedAt)
     }

@@ -18,6 +18,7 @@ struct ArticleListModel {
         let contributor: Contributor?
         let renderedBody: String?
         let body: String?
+        let likesCount: Int?
         let createdAt: Date?
         let updatedAt: Date?
     }
