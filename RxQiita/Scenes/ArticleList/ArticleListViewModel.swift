@@ -10,15 +10,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-// TODO:- move to somewhere
-struct ArticleListTableCellModel {
-    let id: String
-    let title: String
-    let contributor: String
-    let likesCount: String
-    let createdAt: String
-}
-
 protocol ArticleListViewModelProtocol {
     func getArticleListStream() -> Signal<[ArticleListTableCellModel]>
     func updateArticleList(searchQuery: String, isAdditional: Bool)
