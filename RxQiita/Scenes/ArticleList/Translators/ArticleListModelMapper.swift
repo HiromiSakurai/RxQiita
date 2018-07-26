@@ -21,6 +21,7 @@ final class ArticleListModelMapper {
                                             contributor: contributor,
                                             renderedBody: article.renderedBody,
                                             body: article.body,
+                                            likesCount: article.likesCount,
                                             createdAt: article.createdAt.nonNil.toDate(),
                                             updatedAt: article.updatedAt.nonNil.toDate())
             }

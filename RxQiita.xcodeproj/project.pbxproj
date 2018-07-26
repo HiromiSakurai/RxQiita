@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D06F7202109D86B00A4FA22 /* ArticleListViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06F71F2109D86B00A4FA22 /* ArticleListViewModelMapper.swift */; };
+		5D06F7222109DAA600A4FA22 /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06F7212109DAA600A4FA22 /* Date+extensions.swift */; };
+		5D06F7242109DEC000A4FA22 /* ArticleListViewModelMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06F7232109DEC000A4FA22 /* ArticleListViewModelMapperTest.swift */; };
+		5D06F7262109E33D00A4FA22 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D06F7252109E33D00A4FA22 /* Differentiator.framework */; };
+		5D06F7282109F27400A4FA22 /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06F7272109F27400A4FA22 /* ArticleListViewModel.swift */; };
+		5D06F72A2109FEAB00A4FA22 /* ArticleListTableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06F7292109FEAB00A4FA22 /* ArticleListTableCellModel.swift */; };
+		5D06F72E210A02DC00A4FA22 /* ArticleListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D06F72D210A02DC00A4FA22 /* ArticleListViewModelTest.swift */; };
 		5D128B3920FDAB9800005A31 /* ArticleListModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D128B3820FDAB9800005A31 /* ArticleListModelMapper.swift */; };
 		5D128B3D20FDB51F00005A31 /* ArticleListModelMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D128B3C20FDB51F00005A31 /* ArticleListModelMapperTest.swift */; };
 		5D128B4320FF03CC00005A31 /* ArticleDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D128B4220FF03CC00005A31 /* ArticleDetailModel.swift */; };
@@ -47,6 +54,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D06F71F2109D86B00A4FA22 /* ArticleListViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModelMapper.swift; sourceTree = "<group>"; };
+		5D06F7212109DAA600A4FA22 /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
+		5D06F7232109DEC000A4FA22 /* ArticleListViewModelMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModelMapperTest.swift; sourceTree = "<group>"; };
+		5D06F7252109E33D00A4FA22 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		5D06F7272109F27400A4FA22 /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
+		5D06F7292109FEAB00A4FA22 /* ArticleListTableCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableCellModel.swift; sourceTree = "<group>"; };
+		5D06F72D210A02DC00A4FA22 /* ArticleListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModelTest.swift; sourceTree = "<group>"; };
 		5D128B3820FDAB9800005A31 /* ArticleListModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListModelMapper.swift; sourceTree = "<group>"; };
 		5D128B3C20FDB51F00005A31 /* ArticleListModelMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListModelMapperTest.swift; sourceTree = "<group>"; };
 		5D128B4220FF03CC00005A31 /* ArticleDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailModel.swift; sourceTree = "<group>"; };
@@ -84,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D06F7262109E33D00A4FA22 /* Differentiator.framework in Frameworks */,
 				5D128B4E20FF2DA900005A31 /* RxDataSources.framework in Frameworks */,
 				5D1E9B3D20F64F3A008EEC87 /* Swinject.framework in Frameworks */,
 				5D1E9B3B20F64F23008EEC87 /* RxCocoa.framework in Frameworks */,
@@ -110,6 +125,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D06F72B210A006900A4FA22 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D1E9B4220F7CAB8008EEC87 /* ArticleListModel.swift */,
+				5D06F7292109FEAB00A4FA22 /* ArticleListTableCellModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5D06F72C210A00DE00A4FA22 /* Translators */ = {
+			isa = PBXGroup;
+			children = (
+				5D128B3820FDAB9800005A31 /* ArticleListModelMapper.swift */,
+				5D06F71F2109D86B00A4FA22 /* ArticleListViewModelMapper.swift */,
+			);
+			path = Translators;
+			sourceTree = "<group>";
+		};
 		5D128B4120FF038B00005A31 /* ArticleDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +207,7 @@
 		5D1E9B2720F64DE1008EEC87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D06F7252109E33D00A4FA22 /* Differentiator.framework */,
 				5D128B4D20FF2DA900005A31 /* RxDataSources.framework */,
 				5D1E9B3C20F64F3A008EEC87 /* Swinject.framework */,
 				5D1E9B3A20F64F23008EEC87 /* RxCocoa.framework */,
@@ -202,9 +236,10 @@
 		5D1E9B3F20F7C297008EEC87 /* ArticleList */ = {
 			isa = PBXGroup;
 			children = (
+				5D06F72C210A00DE00A4FA22 /* Translators */,
+				5D06F72B210A006900A4FA22 /* Models */,
 				5D1E9B4020F7C597008EEC87 /* ArticleListUsecase.swift */,
-				5D1E9B4220F7CAB8008EEC87 /* ArticleListModel.swift */,
-				5D128B3820FDAB9800005A31 /* ArticleListModelMapper.swift */,
+				5D06F7272109F27400A4FA22 /* ArticleListViewModel.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -213,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				5D5AAEFC20F8B163008641B9 /* String+extensions.swift */,
+				5D06F7212109DAA600A4FA22 /* Date+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -222,6 +258,8 @@
 			children = (
 				5D5AAF0B20F92098008641B9 /* ArticleListUsecaseTest.swift */,
 				5D128B3C20FDB51F00005A31 /* ArticleListModelMapperTest.swift */,
+				5D06F7232109DEC000A4FA22 /* ArticleListViewModelMapperTest.swift */,
+				5D06F72D210A02DC00A4FA22 /* ArticleListViewModelTest.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -354,6 +392,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
 			);
 			outputPaths = (
 			);
@@ -373,9 +413,13 @@
 				5D5AAEFD20F8B163008641B9 /* String+extensions.swift in Sources */,
 				5D128B4520FF04AC00005A31 /* ArticleDetailModelMapper.swift in Sources */,
 				5D1E9B4120F7C597008EEC87 /* ArticleListUsecase.swift in Sources */,
+				5D06F7222109DAA600A4FA22 /* Date+extensions.swift in Sources */,
 				5D128B4A20FF09CB00005A31 /* ArticleDetailUsecase.swift in Sources */,
+				5D06F7202109D86B00A4FA22 /* ArticleListViewModelMapper.swift in Sources */,
 				5D1E9B4320F7CAB8008EEC87 /* ArticleListModel.swift in Sources */,
+				5D06F7282109F27400A4FA22 /* ArticleListViewModel.swift in Sources */,
 				5D1E9B0620F63EA0008EEC87 /* AppDelegate.swift in Sources */,
+				5D06F72A2109FEAB00A4FA22 /* ArticleListTableCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +430,9 @@
 				5D128B3D20FDB51F00005A31 /* ArticleListModelMapperTest.swift in Sources */,
 				5D128B4C20FF268E00005A31 /* ArticleDetailUsecaseTest.swift in Sources */,
 				5D128B4820FF05CD00005A31 /* ArticleDetailModelMapperTest.swift in Sources */,
+				5D06F72E210A02DC00A4FA22 /* ArticleListViewModelTest.swift in Sources */,
 				5D5AAF0C20F92098008641B9 /* ArticleListUsecaseTest.swift in Sources */,
+				5D06F7242109DEC000A4FA22 /* ArticleListViewModelMapperTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
