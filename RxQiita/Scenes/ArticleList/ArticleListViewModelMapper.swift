@@ -27,12 +27,3 @@ final class ArticleListViewModelMapper {
         return String(d.year) + "/" + String(d.month) + "/" + String(d.month)
     }
 }
-
-// TODO:- move to somewhere
-struct ArticleListTableCellModel {
-    let id: String
-    let title: String
-    let contributor: String
-    let likesCount: String
-    let createdAt: String
-}
