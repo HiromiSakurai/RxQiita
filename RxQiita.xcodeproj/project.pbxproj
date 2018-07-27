@@ -46,6 +46,7 @@
 		5DA07762210B519D008B0343 /* UsecaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07761210B519D008B0343 /* UsecaseAssembly.swift */; };
 		5DA07764210B5B89008B0343 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07763210B5B89008B0343 /* ViewModelAssembly.swift */; };
 		5DA07766210B5E0E008B0343 /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07765210B5E0E008B0343 /* ViewControllerAssembly.swift */; };
+		5DA07768210B614B008B0343 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07767210B614B008B0343 /* Container.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		5DA07761210B519D008B0343 /* UsecaseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsecaseAssembly.swift; sourceTree = "<group>"; };
 		5DA07763210B5B89008B0343 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
 		5DA07765210B5E0E008B0343 /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAssembly.swift; sourceTree = "<group>"; };
+		5DA07767210B614B008B0343 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 				5DA07761210B519D008B0343 /* UsecaseAssembly.swift */,
 				5DA07763210B5B89008B0343 /* ViewModelAssembly.swift */,
 				5DA07765210B5E0E008B0343 /* ViewControllerAssembly.swift */,
+				5DA07767210B614B008B0343 /* Container.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				5D1E9B4120F7C597008EEC87 /* ArticleListUsecase.swift in Sources */,
 				5D06F7222109DAA600A4FA22 /* Date+extensions.swift in Sources */,
 				5D128B4A20FF09CB00005A31 /* ArticleDetailUsecase.swift in Sources */,
+				5DA07768210B614B008B0343 /* Container.swift in Sources */,
 				5DA07762210B519D008B0343 /* UsecaseAssembly.swift in Sources */,
 				5D06F7202109D86B00A4FA22 /* ArticleListViewModelMapper.swift in Sources */,
 				5DA0775D210AD36B008B0343 /* ArticleListViewController.swift in Sources */,
