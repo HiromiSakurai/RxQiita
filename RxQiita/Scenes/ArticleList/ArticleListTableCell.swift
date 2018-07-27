@@ -13,16 +13,23 @@ class ArticleListTableCell: UITableViewCell {
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .left
+        label.numberOfLines = 2
+        //label.backgroundColor = .red
         return label
     }()
 
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .right
+        //label.backgroundColor = .blue
         return label
     }()
 
     private lazy var likesCountLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .right
+        //label.backgroundColor = .green
         return label
     }()
 
@@ -36,16 +43,17 @@ class ArticleListTableCell: UITableViewCell {
 
     func config(title: String, likesCount: String, date: String) {
         titleLabel.text = title
-        likesCountLabel.text = likesCount
-        dateLabel.text = date
+        likesCountLabel.text = "👍 " + likesCount
+        dateLabel.text = "🕰 " + date
     }
 
-    private func setupLayout() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
         contentView.addSubview(titleLabel)
         contentView.addSubview(dateLabel)
         contentView.addSubview(likesCountLabel)
-        titleLabel.pin.top().left().height(30).right()
-        dateLabel.pin.below(of: titleLabel).right().height(20).width(100)
-        likesCountLabel.pin.below(of: titleLabel).before(of: dateLabel).height(20).width(100)
+        titleLabel.pin.top().left().right().height(60).margin(10)
+        dateLabel.pin.below(of: titleLabel, aligned: .right).width(titleLabel.frame.width / 3).height(20)
+        likesCountLabel.pin.below(of: titleLabel).before(of: dateLabel).width(dateLabel.frame.width / 2).height(20)
     }
 }
