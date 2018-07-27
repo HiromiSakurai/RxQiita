@@ -23,7 +23,7 @@ class ArticleListViewController: UIViewController {
 
     private lazy var articleListTableView: UITableView = {
         let table = UITableView()
-        table.rowHeight = 50
+        table.rowHeight = 100
         return table
     }()
 
@@ -38,6 +38,7 @@ class ArticleListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Post List"
         bindViewModel()
         setupTableView()
         setupLayout()
@@ -45,10 +46,11 @@ class ArticleListViewController: UIViewController {
     }
 
     private func bindViewModel() {
+        // swiftlint:disable opening_brace
         viewModel.getArticleListStream().asObservable()
             .bind(to: articleListTableView.rx.items(cellIdentifier: "cell",
                                                     cellType: ArticleListTableCell.self))
-            { row, element, cell in
+            { _, element, cell in
                 cell.config(title: element.title, likesCount: element.likesCount, date: element.createdAt)
             }
             .disposed(by: disposeBag)
