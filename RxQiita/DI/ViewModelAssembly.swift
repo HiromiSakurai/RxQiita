@@ -9,7 +9,7 @@
 import Foundation
 import Swinject
 
-final class ViewModelAssembly {
+final class ViewModelAssembly: Assembly {
     func assemble(container: Container) {
         registerViewModel(container: container)
         registerViewModelMapper(container: container)
