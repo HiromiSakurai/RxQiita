@@ -44,6 +44,7 @@
 		5DA0775D210AD36B008B0343 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA0775C210AD36B008B0343 /* ArticleListViewController.swift */; };
 		5DA0775F210AE8A0008B0343 /* ArticleListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA0775E210AE8A0008B0343 /* ArticleListTableCell.swift */; };
 		5DA07762210B519D008B0343 /* UsecaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07761210B519D008B0343 /* UsecaseAssembly.swift */; };
+		5DA07764210B5B89008B0343 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07763210B5B89008B0343 /* ViewModelAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		5DA0775C210AD36B008B0343 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		5DA0775E210AE8A0008B0343 /* ArticleListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableCell.swift; sourceTree = "<group>"; };
 		5DA07761210B519D008B0343 /* UsecaseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsecaseAssembly.swift; sourceTree = "<group>"; };
+		5DA07763210B5B89008B0343 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				5DA07761210B519D008B0343 /* UsecaseAssembly.swift */,
+				5DA07763210B5B89008B0343 /* ViewModelAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				5D06F7282109F27400A4FA22 /* ArticleListViewModel.swift in Sources */,
 				5D1E9B0620F63EA0008EEC87 /* AppDelegate.swift in Sources */,
 				5D06F72A2109FEAB00A4FA22 /* ArticleListTableCellModel.swift in Sources */,
+				5DA07764210B5B89008B0343 /* ViewModelAssembly.swift in Sources */,
 				5DA0775F210AE8A0008B0343 /* ArticleListTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
