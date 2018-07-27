@@ -43,6 +43,7 @@
 		5D5AAF0F20F92628008641B9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3020F64E83008EEC87 /* RxSwift.framework */; };
 		5DA0775D210AD36B008B0343 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA0775C210AD36B008B0343 /* ArticleListViewController.swift */; };
 		5DA0775F210AE8A0008B0343 /* ArticleListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA0775E210AE8A0008B0343 /* ArticleListTableCell.swift */; };
+		5DA07762210B519D008B0343 /* UsecaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07761210B519D008B0343 /* UsecaseAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		5D5AAF0B20F92098008641B9 /* ArticleListUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleListUsecaseTest.swift; path = RxQiitaTests/ArticleList/ArticleListUsecaseTest.swift; sourceTree = SOURCE_ROOT; };
 		5DA0775C210AD36B008B0343 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		5DA0775E210AE8A0008B0343 /* ArticleListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableCell.swift; sourceTree = "<group>"; };
+		5DA07761210B519D008B0343 /* UsecaseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsecaseAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 		5D1E9B0420F63EA0008EEC87 /* RxQiita */ = {
 			isa = PBXGroup;
 			children = (
+				5DA07760210B5146008B0343 /* DI */,
 				5D1E9B3E20F7C272008EEC87 /* Scenes */,
 				5D5AAEFB20F8AFBD008641B9 /* Extensions */,
 				5D1E9B0520F63EA0008EEC87 /* AppDelegate.swift */,
@@ -268,6 +271,14 @@
 				5D06F72D210A02DC00A4FA22 /* ArticleListViewModelTest.swift */,
 			);
 			path = ArticleList;
+			sourceTree = "<group>";
+		};
+		5DA07760210B5146008B0343 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				5DA07761210B519D008B0343 /* UsecaseAssembly.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +432,7 @@
 				5D1E9B4120F7C597008EEC87 /* ArticleListUsecase.swift in Sources */,
 				5D06F7222109DAA600A4FA22 /* Date+extensions.swift in Sources */,
 				5D128B4A20FF09CB00005A31 /* ArticleDetailUsecase.swift in Sources */,
+				5DA07762210B519D008B0343 /* UsecaseAssembly.swift in Sources */,
 				5D06F7202109D86B00A4FA22 /* ArticleListViewModelMapper.swift in Sources */,
 				5DA0775D210AD36B008B0343 /* ArticleListViewController.swift in Sources */,
 				5D1E9B4320F7CAB8008EEC87 /* ArticleListModel.swift in Sources */,

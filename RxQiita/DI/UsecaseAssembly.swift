@@ -7,3 +7,31 @@
 //
 
 import Foundation
+import Swinject
+import QiitaAPIManager
+
+final class UsecaseAssembly: Assembly {
+    func assemble(container: Container) {
+        registerUsecase(container: container)
+        registerModelMapper(container: container)
+        registerAPIClient(container: container)
+    }
+
+    func registerUsecase(container: Container) {
+        container.register(ArticleListUsecaseProtocol.self) { (_, apiClient: QiitaClientProtocol, mapper: ArticleListModelMapperProtocol) in
+            ArticleListUsecase(qiitaClient: apiClient, mapper: mapper)
+        }
+    }
+
+    func registerModelMapper(container: Container) {
+        container.register(ArticleListModelMapperProtocol.self) { _ in
+            ArticleListModelMapper()
+        }
+    }
+
+    func registerAPIClient(container: Container) {
+        container.register(QiitaClientProtocol.self) { _ in
+            QiitaClient()
+        }
+    }
+}
