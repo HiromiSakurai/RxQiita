@@ -8,7 +8,11 @@
 
 import Foundation
 
-final class ArticleListViewModelMapper {
+protocol ArticleListViewModelMapperProtocol {
+    func transform(model: ArticleListModel) -> [ArticleListTableCellModel]
+}
+
+final class ArticleListViewModelMapper: ArticleListViewModelMapperProtocol {
 
     func transform(model: ArticleListModel) -> [ArticleListTableCellModel] {
         guard let articles = model.articles else { return [] }

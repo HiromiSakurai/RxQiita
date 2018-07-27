@@ -12,7 +12,7 @@ import QiitaAPIManager
 
 class ArticleListModelMapperTest: XCTestCase {
 
-    var mapper: ArticleListModelMapper!
+    var mapper: ArticleListModelMapperProtocol!
     var entity: [Article]!
     
     override func setUp() {

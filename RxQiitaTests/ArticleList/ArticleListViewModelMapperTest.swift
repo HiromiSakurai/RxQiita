@@ -12,7 +12,7 @@ import XCTest
 class ArticleListViewModelMapperTest: XCTestCase {
 
     var model: ArticleListModel!
-    var mapper: ArticleListViewModelMapper!
+    var mapper: ArticleListViewModelMapperProtocol!
     
     override func setUp() {
         super.setUp()

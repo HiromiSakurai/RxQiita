@@ -15,12 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let qiitaClient = QiitaClient()
-        let modelMapper = ArticleListModelMapper()
-        let usecase = ArticleListUsecase(qiitaClient: qiitaClient, mapper: modelMapper)
-        let viewModelMapper = ArticleListViewModelMapper()
-        let viewModel = ArticleListViewModel(usecase: usecase, mapper: viewModelMapper)
-        let vc = ArticleListViewController(viewModel: viewModel)
+        // swiftlint:disable:next force_unwrapping
+        let vc = resolver.resolve(ArticleListViewController.self)!
         let navCon = UINavigationController(rootViewController: vc)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()

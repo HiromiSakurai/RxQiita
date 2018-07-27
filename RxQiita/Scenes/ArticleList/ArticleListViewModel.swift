@@ -18,12 +18,12 @@ protocol ArticleListViewModelProtocol {
 final class ArticleListViewModel {
 
     private let usecase: ArticleListUsecaseProtocol
-    private let mapper: ArticleListViewModelMapper
+    private let mapper: ArticleListViewModelMapperProtocol
     private var dataSource: [ArticleListTableCellModel]
 
     private let disposeBag = DisposeBag()
 
-    init(usecase: ArticleListUsecaseProtocol, mapper: ArticleListViewModelMapper) {
+    init(usecase: ArticleListUsecaseProtocol, mapper: ArticleListViewModelMapperProtocol) {
         self.usecase = usecase
         self.mapper = mapper
         self.dataSource = []

@@ -14,7 +14,7 @@ import RxCocoa
 class ArticleListViewModelTest: XCTestCase {
 
     var usecase: ArticleListUsecaseProtocol!
-    var mapper: ArticleListViewModelMapper!
+    var mapper: ArticleListViewModelMapperProtocol!
     var viewModel: ArticleListViewModelProtocol!
 
     let disposeBag = DisposeBag()

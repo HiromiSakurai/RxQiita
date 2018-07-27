@@ -9,7 +9,11 @@
 import Foundation
 import QiitaAPIManager
 
-final class ArticleListModelMapper {
+protocol ArticleListModelMapperProtocol {
+    func transform(articles: [Article]) -> ArticleListModel
+}
+
+final class ArticleListModelMapper: ArticleListModelMapperProtocol {
 
     func transform(articles: [Article]) -> ArticleListModel {
         let articles =  articles.map { article -> ArticleListModel.Article? in

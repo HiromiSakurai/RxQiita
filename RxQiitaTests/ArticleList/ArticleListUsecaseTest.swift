@@ -14,7 +14,7 @@ import RxSwift
 class ArticleListUsecaseTest: XCTestCase {
 
     var qiitaClient: QiitaClient!
-    var mapper: ArticleListModelMapper!
+    var mapper: ArticleListModelMapperProtocol!
 
     var usecase: ArticleListUsecaseProtocol!
 

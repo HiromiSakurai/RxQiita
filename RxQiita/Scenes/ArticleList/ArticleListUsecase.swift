@@ -24,7 +24,7 @@ final class ArticleListUsecase {
     }
 
     private let qiitaClient: QiitaClientProtocol
-    private let mapper: ArticleListModelMapper
+    private let mapper: ArticleListModelMapperProtocol
 
     private var currentQuery: String = Const.emptyStrig
     private var nextPage: Int = Const.nextPageIndex
@@ -32,7 +32,7 @@ final class ArticleListUsecase {
     private let modelPublishSubject = PublishSubject<ArticleListModel>()
     private let disposeBag = DisposeBag()
 
-    init(qiitaClient: QiitaClientProtocol, mapper: ArticleListModelMapper) {
+    init(qiitaClient: QiitaClientProtocol, mapper: ArticleListModelMapperProtocol) {
         self.qiitaClient = qiitaClient
         self.mapper = mapper
     }
