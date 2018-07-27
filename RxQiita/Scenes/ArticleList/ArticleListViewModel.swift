@@ -19,12 +19,14 @@ final class ArticleListViewModel {
 
     private let usecase: ArticleListUsecaseProtocol
     private let mapper: ArticleListViewModelMapper
+    private var dataSource: [ArticleListTableCellModel]
 
     private let disposeBag = DisposeBag()
 
     init(usecase: ArticleListUsecaseProtocol, mapper: ArticleListViewModelMapper) {
         self.usecase = usecase
         self.mapper = mapper
+        self.dataSource = []
     }
 }
 
@@ -34,12 +36,14 @@ extension ArticleListViewModel: ArticleListViewModelProtocol {
         return usecase.getArticleListStream()
             .map { [weak self] model -> [ArticleListTableCellModel] in
                 guard let weakSelf = self else { return [] }
-                return weakSelf.mapper.transform(model: model)
+                weakSelf.dataSource += weakSelf.mapper.transform(model: model)
+                return weakSelf.dataSource
             }
             .asSignal(onErrorJustReturn: [])
     }
 
     func updateArticleList(searchQuery: String, isAdditional: Bool) {
+        if !isAdditional { dataSource = [] }
         usecase.updateArticleList(searchQuery: searchQuery, isAdditional: isAdditional)
     }
 }

@@ -41,6 +41,8 @@
 		5D5AAF0C20F92098008641B9 /* ArticleListUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5AAF0B20F92098008641B9 /* ArticleListUsecaseTest.swift */; };
 		5D5AAF0E20F92619008641B9 /* QiitaAPIManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3420F64EBF008EEC87 /* QiitaAPIManager.framework */; };
 		5D5AAF0F20F92628008641B9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3020F64E83008EEC87 /* RxSwift.framework */; };
+		5DA0775D210AD36B008B0343 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA0775C210AD36B008B0343 /* ArticleListViewController.swift */; };
+		5DA0775F210AE8A0008B0343 /* ArticleListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA0775E210AE8A0008B0343 /* ArticleListTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		5D1E9B4220F7CAB8008EEC87 /* ArticleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListModel.swift; sourceTree = "<group>"; };
 		5D5AAEFC20F8B163008641B9 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		5D5AAF0B20F92098008641B9 /* ArticleListUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleListUsecaseTest.swift; path = RxQiitaTests/ArticleList/ArticleListUsecaseTest.swift; sourceTree = SOURCE_ROOT; };
+		5DA0775C210AD36B008B0343 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
+		5DA0775E210AE8A0008B0343 /* ArticleListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +244,8 @@
 				5D06F72B210A006900A4FA22 /* Models */,
 				5D1E9B4020F7C597008EEC87 /* ArticleListUsecase.swift */,
 				5D06F7272109F27400A4FA22 /* ArticleListViewModel.swift */,
+				5DA0775C210AD36B008B0343 /* ArticleListViewController.swift */,
+				5DA0775E210AE8A0008B0343 /* ArticleListTableCell.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -416,10 +422,12 @@
 				5D06F7222109DAA600A4FA22 /* Date+extensions.swift in Sources */,
 				5D128B4A20FF09CB00005A31 /* ArticleDetailUsecase.swift in Sources */,
 				5D06F7202109D86B00A4FA22 /* ArticleListViewModelMapper.swift in Sources */,
+				5DA0775D210AD36B008B0343 /* ArticleListViewController.swift in Sources */,
 				5D1E9B4320F7CAB8008EEC87 /* ArticleListModel.swift in Sources */,
 				5D06F7282109F27400A4FA22 /* ArticleListViewModel.swift in Sources */,
 				5D1E9B0620F63EA0008EEC87 /* AppDelegate.swift in Sources */,
 				5D06F72A2109FEAB00A4FA22 /* ArticleListTableCellModel.swift in Sources */,
+				5DA0775F210AE8A0008B0343 /* ArticleListTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

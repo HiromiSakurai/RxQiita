@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QiitaAPIManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,7 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let qiitaClient = QiitaClient()
+        let modelMapper = ArticleListModelMapper()
+        let usecase = ArticleListUsecase(qiitaClient: qiitaClient, mapper: modelMapper)
+        let viewModelMapper = ArticleListViewModelMapper()
+        let viewModel = ArticleListViewModel(usecase: usecase, mapper: viewModelMapper)
+        let vc = ArticleListViewController(viewModel: viewModel)
+        let navCon = UINavigationController(rootViewController: vc)
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = navCon
         return true
     }
 
