@@ -18,6 +18,7 @@ final class ViewControllerAssembly: Assembly {
 
     func registerViewController(container: Container) {
         container.register(ArticleListViewController.self) { _ in
+            // swiftlint:disable force_unwrapping
             let apiClient = container.resolve(QiitaClientProtocol.self)!
             let modelMapper = container.resolve(ArticleListModelMapperProtocol.self)!
             let usecase = container.resolve(ArticleListUsecaseProtocol.self, arguments: apiClient, modelMapper)!

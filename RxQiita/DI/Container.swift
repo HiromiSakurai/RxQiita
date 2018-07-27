@@ -13,6 +13,6 @@ var resolver: Resolver {
     return assembler.resolver
 }
 
-private let assembler = Assembler([ViewModelAssembly(),
+private let assembler = Assembler([ViewControllerAssembly(),
                                    ViewModelAssembly(),
                                    UsecaseAssembly()])
