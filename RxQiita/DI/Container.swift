@@ -13,6 +13,7 @@ var resolver: Resolver {
     return assembler.resolver
 }
 
-private let assembler = Assembler([ViewControllerAssembly(),
-                                   ViewModelAssembly(),
-                                   UsecaseAssembly()])
+// swiftlint:disable:next private_over_fileprivate
+fileprivate let assembler = Assembler([ViewControllerAssembly(),
+                                       ViewModelAssembly(),
+                                       UsecaseAssembly()])
