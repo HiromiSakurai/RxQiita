@@ -47,9 +47,9 @@ class ArticleListViewController: UIViewController {
 
     private func bindViewModel() {
         // swiftlint:disable opening_brace
-        viewModel.getArticleListStream().asObservable()
-            .bind(to: articleListTableView.rx.items(cellIdentifier: "cell",
-                                                    cellType: ArticleListTableCell.self))
+        viewModel.getArticleListStream()
+            .drive(articleListTableView.rx.items(cellIdentifier: "cell",
+                                                 cellType: ArticleListTableCell.self))
             { _, element, cell in
                 cell.config(title: element.title, likesCount: element.likesCount, date: element.createdAt)
             }
