@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 protocol ArticleListViewModelProtocol {
-    func getArticleListStream() -> Signal<[ArticleListTableCellModel]>
+    func getArticleListStream() -> Driver<[ArticleListTableCellModel]>
     func updateArticleList(searchQuery: String, isAdditional: Bool)
 }
 
@@ -32,14 +32,14 @@ final class ArticleListViewModel {
 
 extension ArticleListViewModel: ArticleListViewModelProtocol {
 
-    func getArticleListStream() -> Signal<[ArticleListTableCellModel]> {
+    func getArticleListStream() -> Driver<[ArticleListTableCellModel]> {
         return usecase.getArticleListStream()
             .map { [weak self] model -> [ArticleListTableCellModel] in
                 guard let weakSelf = self else { return [] }
                 weakSelf.dataSource += weakSelf.mapper.transform(model: model)
                 return weakSelf.dataSource
             }
-            .asSignal(onErrorJustReturn: [])
+            .asDriver(onErrorJustReturn: [])
     }
 
     func updateArticleList(searchQuery: String, isAdditional: Bool) {
