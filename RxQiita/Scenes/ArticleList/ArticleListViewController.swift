@@ -48,7 +48,7 @@ class ArticleListViewController: UIViewController {
     private func bindViewModel() {
         // swiftlint:disable opening_brace
         viewModel.getArticleListStream()
-            .drive(articleListTableView.rx.items(cellIdentifier: "cell",
+            .drive(articleListTableView.rx.items(cellIdentifier: ArticleListTableCell.reuseIdentifier,
                                                  cellType: ArticleListTableCell.self))
             { _, element, cell in
                 cell.config(title: element.title, likesCount: element.likesCount, date: element.createdAt)
@@ -57,7 +57,7 @@ class ArticleListViewController: UIViewController {
     }
 
     private func setupTableView() {
-        articleListTableView.register(ArticleListTableCell.self, forCellReuseIdentifier: "cell")
+        articleListTableView.register(ArticleListTableCell.self, forCellReuseIdentifier: ArticleListTableCell.reuseIdentifier)
     }
 
     private func setupLayout() {

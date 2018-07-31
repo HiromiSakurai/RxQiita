@@ -57,3 +57,5 @@ class ArticleListTableCell: UITableViewCell {
         likesCountLabel.pin.below(of: titleLabel).before(of: dateLabel).width(dateLabel.frame.width / 2).height(20)
     }
 }
+
+extension ArticleListTableCell: ReuseIdentifying {}
