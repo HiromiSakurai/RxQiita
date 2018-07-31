@@ -15,13 +15,13 @@ final class ViewModelAssembly: Assembly {
         registerViewModelMapper(container: container)
     }
 
-    func registerViewModel(container: Container) {
+    private func registerViewModel(container: Container) {
         container.register(ArticleListViewModelProtocol.self) { (_, usecase: ArticleListUsecaseProtocol, mapper: ArticleListViewModelMapperProtocol) in
             ArticleListViewModel(usecase: usecase, mapper: mapper)
         }
     }
 
-    func registerViewModelMapper(container: Container) {
+    private func registerViewModelMapper(container: Container) {
         container.register(ArticleListViewModelMapperProtocol.self) { _ in
             ArticleListViewModelMapper()
         }
