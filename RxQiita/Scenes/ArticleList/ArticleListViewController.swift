@@ -57,7 +57,7 @@ class ArticleListViewController: UIViewController {
     }
 
     private func setupTableView() {
-        articleListTableView.register(ArticleListTableCell.self, forCellReuseIdentifier: ArticleListTableCell.reuseIdentifier)
+        articleListTableView.register(ArticleListTableCell.self)
     }
 
     private func setupLayout() {

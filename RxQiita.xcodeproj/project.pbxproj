@@ -42,6 +42,7 @@
 		5D5AAF0E20F92619008641B9 /* QiitaAPIManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3420F64EBF008EEC87 /* QiitaAPIManager.framework */; };
 		5D5AAF0F20F92628008641B9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3020F64E83008EEC87 /* RxSwift.framework */; };
 		5D84465C211055D900F92FE0 /* ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D84465B211055D900F92FE0 /* ReuseIdentifying.swift */; };
+		5D84465E211058DB00F92FE0 /* UITableView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D84465D211058DB00F92FE0 /* UITableView+extensions.swift */; };
 		5DA0775D210AD36B008B0343 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA0775C210AD36B008B0343 /* ArticleListViewController.swift */; };
 		5DA0775F210AE8A0008B0343 /* ArticleListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA0775E210AE8A0008B0343 /* ArticleListTableCell.swift */; };
 		5DA07762210B519D008B0343 /* UsecaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07761210B519D008B0343 /* UsecaseAssembly.swift */; };
@@ -99,6 +100,7 @@
 		5D5AAEFC20F8B163008641B9 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		5D5AAF0B20F92098008641B9 /* ArticleListUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleListUsecaseTest.swift; path = RxQiitaTests/ArticleList/ArticleListUsecaseTest.swift; sourceTree = SOURCE_ROOT; };
 		5D84465B211055D900F92FE0 /* ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifying.swift; sourceTree = "<group>"; };
+		5D84465D211058DB00F92FE0 /* UITableView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extensions.swift"; sourceTree = "<group>"; };
 		5DA0775C210AD36B008B0343 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		5DA0775E210AE8A0008B0343 /* ArticleListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableCell.swift; sourceTree = "<group>"; };
 		5DA07761210B519D008B0343 /* UsecaseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsecaseAssembly.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			children = (
 				5D5AAEFC20F8B163008641B9 /* String+extensions.swift */,
 				5D06F7212109DAA600A4FA22 /* Date+extensions.swift */,
+				5D84465D211058DB00F92FE0 /* UITableView+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				5D06F7282109F27400A4FA22 /* ArticleListViewModel.swift in Sources */,
 				5DA07766210B5E0E008B0343 /* ViewControllerAssembly.swift in Sources */,
 				5D1E9B0620F63EA0008EEC87 /* AppDelegate.swift in Sources */,
+				5D84465E211058DB00F92FE0 /* UITableView+extensions.swift in Sources */,
 				5D06F72A2109FEAB00A4FA22 /* ArticleListTableCellModel.swift in Sources */,
 				5DA07764210B5B89008B0343 /* ViewModelAssembly.swift in Sources */,
 				5DA0775F210AE8A0008B0343 /* ArticleListTableCell.swift in Sources */,
