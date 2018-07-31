@@ -19,6 +19,10 @@ final class ViewModelAssembly: Assembly {
         container.register(ArticleListViewModelProtocol.self) { (_, usecase: ArticleListUsecaseProtocol, mapper: ArticleListViewModelMapperProtocol) in
             ArticleListViewModel(usecase: usecase, mapper: mapper)
         }
+
+        container.register(LanguageListViewModelProtocol.self) { _ in
+            LanguageListViewModel()
+        }
     }
 
     private func registerViewModelMapper(container: Container) {

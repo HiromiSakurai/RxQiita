@@ -24,8 +24,12 @@ final class ViewControllerAssembly: Assembly {
             let usecase = container.resolve(ArticleListUsecaseProtocol.self, arguments: apiClient, modelMapper)!
             let viewModelMapper = container.resolve(ArticleListViewModelMapperProtocol.self)!
             let viewModel = container.resolve(ArticleListViewModelProtocol.self, arguments: usecase, viewModelMapper)!
-            let vc = ArticleListViewController(viewModel: viewModel)
-            return vc
+            return ArticleListViewController(viewModel: viewModel)
+        }
+
+        container.register(LanguageListViewController.self) { _ in
+            let viewModel = container.resolve(LanguageListViewModelProtocol.self)!
+            return LanguageListViewController(viewModel: viewModel)
         }
     }
 }

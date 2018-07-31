@@ -46,7 +46,10 @@ class ArticleListTableCell: UITableViewCell {
         likesCountLabel.text = "👍 " + likesCount
         dateLabel.text = "🕰 " + date
     }
+}
 
+// MARK: Layout
+extension ArticleListTableCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.addSubview(titleLabel)
@@ -58,4 +61,5 @@ class ArticleListTableCell: UITableViewCell {
     }
 }
 
+// MARK: ReuseIdentifying
 extension ArticleListTableCell: ReuseIdentifying {}

@@ -11,14 +11,13 @@ import PinLayout
 import RxSwift
 import RxCocoa
 
-class ArticleListViewController: UIViewController {
+final class ArticleListViewController: UIViewController {
 
     private struct Const {
         static let firstSearchQuery: String = "Swift"
     }
 
     private let viewModel: ArticleListViewModelProtocol
-
     private let disposeBag = DisposeBag()
 
     private lazy var articleListTableView: UITableView = {
@@ -26,6 +25,8 @@ class ArticleListViewController: UIViewController {
         table.rowHeight = 100
         return table
     }()
+
+    private let languageButton = UIBarButtonItem(barButtonSystemItem: .organize, target: nil, action: nil)
 
     init(viewModel: ArticleListViewModelProtocol) {
         self.viewModel = viewModel
@@ -39,8 +40,10 @@ class ArticleListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Post List"
+        navigationItem.rightBarButtonItem = languageButton
         bindViewModel()
         setupTableView()
+        setupViewAction()
         setupLayout()
         viewModel.updateArticleList(searchQuery: Const.firstSearchQuery, isAdditional: false)
     }
@@ -53,6 +56,19 @@ class ArticleListViewController: UIViewController {
             { _, element, cell in
                 cell.config(title: element.title, likesCount: element.likesCount, date: element.createdAt)
             }
+            .disposed(by: disposeBag)
+    }
+
+    private func setupViewAction() {
+        languageButton.rx.tap
+            .asObservable()
+            .subscribe(onNext: { [weak self] _ in
+                guard let `self` = self else { return }
+                // swiftlint:disable:next force_unwrapping
+                let vc = resolver.resolve(LanguageListViewController.self)!
+                let navCon = UINavigationController(rootViewController: vc)
+                self.present(navCon, animated: true)
+            })
             .disposed(by: disposeBag)
     }
 

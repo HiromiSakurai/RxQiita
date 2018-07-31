@@ -43,6 +43,9 @@
 		5D5AAF0F20F92628008641B9 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3020F64E83008EEC87 /* RxSwift.framework */; };
 		5D84465C211055D900F92FE0 /* ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D84465B211055D900F92FE0 /* ReuseIdentifying.swift */; };
 		5D84465E211058DB00F92FE0 /* UITableView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D84465D211058DB00F92FE0 /* UITableView+extensions.swift */; };
+		5D844661211060CB00F92FE0 /* LanguageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D844660211060CB00F92FE0 /* LanguageListViewController.swift */; };
+		5D8446632110624F00F92FE0 /* LanguageListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8446622110624F00F92FE0 /* LanguageListTableCell.swift */; };
+		5D844665211066CE00F92FE0 /* LanguageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D844664211066CE00F92FE0 /* LanguageListViewModel.swift */; };
 		5DA0775D210AD36B008B0343 /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA0775C210AD36B008B0343 /* ArticleListViewController.swift */; };
 		5DA0775F210AE8A0008B0343 /* ArticleListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA0775E210AE8A0008B0343 /* ArticleListTableCell.swift */; };
 		5DA07762210B519D008B0343 /* UsecaseAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07761210B519D008B0343 /* UsecaseAssembly.swift */; };
@@ -101,6 +104,9 @@
 		5D5AAF0B20F92098008641B9 /* ArticleListUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleListUsecaseTest.swift; path = RxQiitaTests/ArticleList/ArticleListUsecaseTest.swift; sourceTree = SOURCE_ROOT; };
 		5D84465B211055D900F92FE0 /* ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifying.swift; sourceTree = "<group>"; };
 		5D84465D211058DB00F92FE0 /* UITableView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extensions.swift"; sourceTree = "<group>"; };
+		5D844660211060CB00F92FE0 /* LanguageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListViewController.swift; sourceTree = "<group>"; };
+		5D8446622110624F00F92FE0 /* LanguageListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListTableCell.swift; sourceTree = "<group>"; };
+		5D844664211066CE00F92FE0 /* LanguageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListViewModel.swift; sourceTree = "<group>"; };
 		5DA0775C210AD36B008B0343 /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
 		5DA0775E210AE8A0008B0343 /* ArticleListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableCell.swift; sourceTree = "<group>"; };
 		5DA07761210B519D008B0343 /* UsecaseAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsecaseAssembly.swift; sourceTree = "<group>"; };
@@ -245,6 +251,7 @@
 		5D1E9B3E20F7C272008EEC87 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				5D84465F2110607A00F92FE0 /* LanguageList */,
 				5D128B4120FF038B00005A31 /* ArticleDetail */,
 				5D1E9B3F20F7C297008EEC87 /* ArticleList */,
 			);
@@ -291,6 +298,16 @@
 				5D84465B211055D900F92FE0 /* ReuseIdentifying.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		5D84465F2110607A00F92FE0 /* LanguageList */ = {
+			isa = PBXGroup;
+			children = (
+				5D844660211060CB00F92FE0 /* LanguageListViewController.swift */,
+				5D8446622110624F00F92FE0 /* LanguageListTableCell.swift */,
+				5D844664211066CE00F92FE0 /* LanguageListViewModel.swift */,
+			);
+			path = LanguageList;
 			sourceTree = "<group>";
 		};
 		5DA07760210B5146008B0343 /* DI */ = {
@@ -455,12 +472,15 @@
 				5D1E9B4120F7C597008EEC87 /* ArticleListUsecase.swift in Sources */,
 				5D84465C211055D900F92FE0 /* ReuseIdentifying.swift in Sources */,
 				5D06F7222109DAA600A4FA22 /* Date+extensions.swift in Sources */,
+				5D844661211060CB00F92FE0 /* LanguageListViewController.swift in Sources */,
 				5D128B4A20FF09CB00005A31 /* ArticleDetailUsecase.swift in Sources */,
 				5DA07768210B614B008B0343 /* Container.swift in Sources */,
 				5DA07762210B519D008B0343 /* UsecaseAssembly.swift in Sources */,
 				5D06F7202109D86B00A4FA22 /* ArticleListViewModelMapper.swift in Sources */,
 				5DA0775D210AD36B008B0343 /* ArticleListViewController.swift in Sources */,
 				5D1E9B4320F7CAB8008EEC87 /* ArticleListModel.swift in Sources */,
+				5D844665211066CE00F92FE0 /* LanguageListViewModel.swift in Sources */,
+				5D8446632110624F00F92FE0 /* LanguageListTableCell.swift in Sources */,
 				5D06F7282109F27400A4FA22 /* ArticleListViewModel.swift in Sources */,
 				5DA07766210B5E0E008B0343 /* ViewControllerAssembly.swift in Sources */,
 				5D1E9B0620F63EA0008EEC87 /* AppDelegate.swift in Sources */,
