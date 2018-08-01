@@ -17,7 +17,8 @@ final class ArticleListViewController: UIViewController {
         static let firstSearchQuery: String = "Swift"
     }
 
-    private let viewModel: ArticleListViewModelProtocol
+    // not 'private' to access in coordinator
+    let viewModel: ArticleListViewModelProtocol
     private let disposeBag = DisposeBag()
 
     private lazy var articleListTableView: UITableView = {
@@ -43,13 +44,13 @@ final class ArticleListViewController: UIViewController {
         navigationItem.rightBarButtonItem = languageButton
         bindViewModel()
         setupTableView()
-        setupViewAction()
         setupLayout()
         viewModel.updateArticleList(searchQuery: Const.firstSearchQuery, isAdditional: false)
     }
 
     private func bindViewModel() {
         // swiftlint:disable opening_brace
+        // TODO: refactoring below closure
         viewModel.getArticleListStream()
             .drive(articleListTableView.rx.items(cellIdentifier: ArticleListTableCell.reuseIdentifier,
                                                  cellType: ArticleListTableCell.self))
@@ -57,18 +58,9 @@ final class ArticleListViewController: UIViewController {
                 cell.config(title: element.title, likesCount: element.likesCount, date: element.createdAt)
             }
             .disposed(by: disposeBag)
-    }
 
-    private func setupViewAction() {
         languageButton.rx.tap
-            .asObservable()
-            .subscribe(onNext: { [weak self] _ in
-                guard let `self` = self else { return }
-                // swiftlint:disable:next force_unwrapping
-                let vc = resolver.resolve(LanguageListViewController.self)!
-                let navCon = UINavigationController(rootViewController: vc)
-                self.present(navCon, animated: true)
-            })
+            .bind(to: viewModel.chooseLanguage)
             .disposed(by: disposeBag)
     }
 

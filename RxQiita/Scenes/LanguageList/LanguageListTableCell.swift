@@ -10,7 +10,7 @@ import UIKit
 
 class LanguageListTableCell: UITableViewCell {
 
-    private lazy var languageTitleLabel: UILabel = {
+    lazy var languageTitleLabel: UILabel = {
         let label = UILabel()
         return label
     }()

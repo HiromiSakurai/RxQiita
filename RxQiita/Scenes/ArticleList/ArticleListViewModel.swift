@@ -13,6 +13,8 @@ import RxCocoa
 protocol ArticleListViewModelProtocol {
     func getArticleListStream() -> Driver<[ArticleListTableCellModel]>
     func updateArticleList(searchQuery: String, isAdditional: Bool)
+    var chooseLanguage: PublishRelay<Void> { get }
+    var showLanguageList: Observable<Void> { get }
 }
 
 final class ArticleListViewModel {
@@ -21,12 +23,16 @@ final class ArticleListViewModel {
     private let mapper: ArticleListViewModelMapperProtocol
     private var dataSource: [ArticleListTableCellModel]
 
+    let chooseLanguage = PublishRelay<Void>()
+    let showLanguageList: Observable<Void>
+
     private let disposeBag = DisposeBag()
 
     init(usecase: ArticleListUsecaseProtocol, mapper: ArticleListViewModelMapperProtocol) {
         self.usecase = usecase
         self.mapper = mapper
         self.dataSource = []
+        self.showLanguageList = chooseLanguage.asObservable()
     }
 }
 
