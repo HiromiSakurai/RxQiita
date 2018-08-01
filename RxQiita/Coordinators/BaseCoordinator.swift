@@ -12,7 +12,7 @@ import RxSwift
 class BaseCoordinator<ResultType> {
     typealias CoordinationResult = ResultType
 
-    private let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
 
     private let identifier = UUID()
 

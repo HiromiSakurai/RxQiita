@@ -17,7 +17,8 @@ final class ArticleListViewController: UIViewController {
         static let firstSearchQuery: String = "Swift"
     }
 
-    private let viewModel: ArticleListViewModelProtocol
+    // not 'private' to access in coordinator
+    let viewModel: ArticleListViewModelProtocol
     private let disposeBag = DisposeBag()
 
     private lazy var articleListTableView: UITableView = {
@@ -61,14 +62,7 @@ final class ArticleListViewController: UIViewController {
 
     private func setupViewAction() {
         languageButton.rx.tap
-            .asObservable()
-            .subscribe(onNext: { [weak self] _ in
-                guard let `self` = self else { return }
-                // swiftlint:disable:next force_unwrapping
-                let vc = resolver.resolve(LanguageListViewController.self)!
-                let navCon = UINavigationController(rootViewController: vc)
-                self.present(navCon, animated: true)
-            })
+            .bind(to: viewModel.chooseLanguage)
             .disposed(by: disposeBag)
     }
 

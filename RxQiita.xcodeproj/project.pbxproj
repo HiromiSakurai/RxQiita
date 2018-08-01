@@ -44,6 +44,7 @@
 		5D6A261021118846009D5852 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A260F21118846009D5852 /* BaseCoordinator.swift */; };
 		5D6A2612211197FF009D5852 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A2611211197FF009D5852 /* AppCoordinator.swift */; };
 		5D6A261421119909009D5852 /* ArticleListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A261321119909009D5852 /* ArticleListCoordinator.swift */; };
+		5D6A26162111DD80009D5852 /* LanguageListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A26152111DD80009D5852 /* LanguageListCoordinator.swift */; };
 		5D84465C211055D900F92FE0 /* ReuseIdentifying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D84465B211055D900F92FE0 /* ReuseIdentifying.swift */; };
 		5D84465E211058DB00F92FE0 /* UITableView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D84465D211058DB00F92FE0 /* UITableView+extensions.swift */; };
 		5D844661211060CB00F92FE0 /* LanguageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D844660211060CB00F92FE0 /* LanguageListViewController.swift */; };
@@ -108,6 +109,7 @@
 		5D6A260F21118846009D5852 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		5D6A2611211197FF009D5852 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		5D6A261321119909009D5852 /* ArticleListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCoordinator.swift; sourceTree = "<group>"; };
+		5D6A26152111DD80009D5852 /* LanguageListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListCoordinator.swift; sourceTree = "<group>"; };
 		5D84465B211055D900F92FE0 /* ReuseIdentifying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifying.swift; sourceTree = "<group>"; };
 		5D84465D211058DB00F92FE0 /* UITableView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extensions.swift"; sourceTree = "<group>"; };
 		5D844660211060CB00F92FE0 /* LanguageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageListViewController.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				5D6A260F21118846009D5852 /* BaseCoordinator.swift */,
 				5D6A2611211197FF009D5852 /* AppCoordinator.swift */,
 				5D6A261321119909009D5852 /* ArticleListCoordinator.swift */,
+				5D6A26152111DD80009D5852 /* LanguageListCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				5D06F7222109DAA600A4FA22 /* Date+extensions.swift in Sources */,
 				5D6A261021118846009D5852 /* BaseCoordinator.swift in Sources */,
 				5D844661211060CB00F92FE0 /* LanguageListViewController.swift in Sources */,
+				5D6A26162111DD80009D5852 /* LanguageListCoordinator.swift in Sources */,
 				5D128B4A20FF09CB00005A31 /* ArticleDetailUsecase.swift in Sources */,
 				5D6A261421119909009D5852 /* ArticleListCoordinator.swift in Sources */,
 				5DA07768210B614B008B0343 /* Container.swift in Sources */,
