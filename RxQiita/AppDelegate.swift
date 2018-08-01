@@ -5,22 +5,23 @@
 //  Created by 櫻井寛海 on 2018/07/11.
 //  Copyright © 2018 Hiromi Sakurai. All rights reserved.
 //
+// swiftlint:disable force_unwrapping
 
 import UIKit
 import QiitaAPIManager
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private var appCoordinator: AppCoordinator!
+    private let disposeBag = DisposeBag()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // swiftlint:disable:next force_unwrapping
-        let vc = resolver.resolve(ArticleListViewController.self)!
-        let navCon = UINavigationController(rootViewController: vc)
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = navCon
+        appCoordinator = AppCoordinator(window: window!)
+        appCoordinator.start().subscribe().disposed(by: disposeBag)
         return true
     }
 
