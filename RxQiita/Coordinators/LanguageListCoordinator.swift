@@ -28,9 +28,10 @@ final class LanguageListCoordinator: BaseCoordinator<LanguageListCoordinationRes
         let vc = resolver.resolve(LanguageListViewController.self)!
         let navCon = UINavigationController(rootViewController: vc)
 
+        let language = vc.viewModel.didSelectLanguage.map { LanguageListCoordinationResult.language($0) }
         let cancel = vc.viewModel.didCancel.map { _ in LanguageListCoordinationResult.cancel }
         rootViewController.present(navCon, animated: true)
-        return cancel
+        return Observable.merge(language, cancel)
             .take(1)
             .do(onNext: { [weak self] _ in
                 self?.rootViewController.dismiss(animated: true)

@@ -12,16 +12,21 @@ import RxCocoa
 
 protocol LanguageListViewModelProtocol {
     func getLanguageList() -> Driver<[String]>
+    var selectLanguage: PublishRelay<String> { get }
+    var didSelectLanguage: Observable<String> { get }
     var cancel: PublishRelay<Void> { get }
     var didCancel: Observable<Void> { get }
 }
 
 final class LanguageListViewModel {
 
+    let selectLanguage = PublishRelay<String>()
+    let didSelectLanguage: Observable<String>
     let cancel = PublishRelay<Void>()
     let didCancel: Observable<Void>
 
     init() {
+        didSelectLanguage = selectLanguage.asObservable()
         didCancel = cancel.asObservable()
     }
 

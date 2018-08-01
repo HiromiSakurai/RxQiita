@@ -20,15 +20,22 @@ final class ArticleListCoordinator: BaseCoordinator<Void> {
 
     override func start() -> Observable<Void> {
         // swiftlint:disable:next force_unwrapping
-        let nextVC = resolver.resolve(ArticleListViewController.self)!
-        let navCon = UINavigationController(rootViewController: nextVC)
+        let articleListVC = resolver.resolve(ArticleListViewController.self)!
+        let navCon = UINavigationController(rootViewController: articleListVC)
 
-        nextVC.viewModel.showLanguageList.flatMap { [weak self] _ -> Observable<String?> in
-            guard let `self` = self else { return .empty() }
-            return self.showLanguageList(on: nextVC)
-        }
-        .subscribe()
-        .disposed(by: disposeBag)
+        articleListVC.viewModel.showLanguageList
+            .flatMap { [weak self] _ -> Observable<String?> in
+                guard let `self` = self else { return .empty() }
+                return self.showLanguageList(on: articleListVC)
+            }
+            .flatMap { result -> Observable<String> in
+                guard let result = result else { return Observable.empty() }
+                return Observable.just(result)
+            }
+            .subscribe(onNext: { result in
+                articleListVC.viewModel.updateArticleList(searchQuery: result, isAdditional: false)
+            })
+            .disposed(by: disposeBag)
 
         window.makeKeyAndVisible()
         window.rootViewController = navCon
@@ -37,8 +44,14 @@ final class ArticleListCoordinator: BaseCoordinator<Void> {
 
     private func showLanguageList(on rootViewController: UIViewController) -> Observable<String?> {
         let languageListCoordinator = LanguageListCoordinator(rootViewController: rootViewController)
-        return coordinate(to: languageListCoordinator).flatMap { _ in
-            return Observable.just("test")
+        return coordinate(to: languageListCoordinator)
+            .map { result in
+                switch result {
+                case .language(let lang):
+                    return lang
+                case .cancel:
+                    return nil
+                }
         }
     }
 }

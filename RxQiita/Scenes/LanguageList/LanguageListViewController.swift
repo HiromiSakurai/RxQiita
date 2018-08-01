@@ -45,12 +45,17 @@ final class LanguageListViewController: UIViewController {
 
     private func bindViewModel() {
         // swiftlint:disable opening_brace
+        // TODO: refactoring below closure
         viewModel.getLanguageList()
             .drive(languageListTableView.rx.items(cellIdentifier: LanguageListTableCell.reuseIdentifier,
                                                   cellType: LanguageListTableCell.self))
             { _, element, cell in
                 cell.config(language: element)
             }
+            .disposed(by: disposeBag)
+
+        languageListTableView.rx.modelSelected(String.self)
+            .bind(to: viewModel.selectLanguage)
             .disposed(by: disposeBag)
 
         cancelButton.rx.tap
