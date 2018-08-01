@@ -24,10 +24,16 @@ final class LanguageListCoordinator: BaseCoordinator<LanguageListCoordinationRes
     }
 
     override func start() -> Observable<LanguageListCoordinationResult> {
-        let vc = resolver.resolve(LanguageListViewController.self)
         // swiftlint:disable:next force_unwrapping
-        let navCon = UINavigationController(rootViewController: vc!)
+        let vc = resolver.resolve(LanguageListViewController.self)!
+        let navCon = UINavigationController(rootViewController: vc)
+
+        let cancel = vc.viewModel.didCancel.map { _ in LanguageListCoordinationResult.cancel }
         rootViewController.present(navCon, animated: true)
-        return Observable.never()
+        return cancel
+            .take(1)
+            .do(onNext: { [weak self] _ in
+                self?.rootViewController.dismiss(animated: true)
+            })
     }
 }

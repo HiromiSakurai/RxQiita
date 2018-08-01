@@ -44,13 +44,13 @@ final class ArticleListViewController: UIViewController {
         navigationItem.rightBarButtonItem = languageButton
         bindViewModel()
         setupTableView()
-        setupViewAction()
         setupLayout()
         viewModel.updateArticleList(searchQuery: Const.firstSearchQuery, isAdditional: false)
     }
 
     private func bindViewModel() {
         // swiftlint:disable opening_brace
+        // TODO: refactoring below closure
         viewModel.getArticleListStream()
             .drive(articleListTableView.rx.items(cellIdentifier: ArticleListTableCell.reuseIdentifier,
                                                  cellType: ArticleListTableCell.self))
@@ -58,9 +58,7 @@ final class ArticleListViewController: UIViewController {
                 cell.config(title: element.title, likesCount: element.likesCount, date: element.createdAt)
             }
             .disposed(by: disposeBag)
-    }
 
-    private func setupViewAction() {
         languageButton.rx.tap
             .bind(to: viewModel.chooseLanguage)
             .disposed(by: disposeBag)
