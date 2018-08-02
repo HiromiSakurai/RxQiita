@@ -21,11 +21,19 @@ final class UsecaseAssembly: Assembly {
         container.register(ArticleListUsecaseProtocol.self) { (_, apiClient: QiitaClientProtocol, mapper: ArticleListModelMapperProtocol) in
             ArticleListUsecase(qiitaClient: apiClient, mapper: mapper)
         }
+
+        container.register(ArticleDetailUsecaseProtocol.self) { (_, apiClient: QiitaClientProtocol, mapper: ArticleDetailModelMapperProtocol, id: String) in
+            ArticleDetailUsecase(qiitaClient: apiClient, mapper: mapper, id: id)
+        }
     }
 
     private func registerModelMapper(container: Container) {
         container.register(ArticleListModelMapperProtocol.self) { _ in
             ArticleListModelMapper()
+        }
+
+        container.register(ArticleDetailModelMapperProtocol.self) { _ in
+            ArticleDetailModelMapper()
         }
     }
 

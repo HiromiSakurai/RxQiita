@@ -62,6 +62,10 @@ final class ArticleListViewController: UIViewController {
         languageButton.rx.tap
             .bind(to: viewModel.chooseLanguage)
             .disposed(by: disposeBag)
+
+        articleListTableView.rx.modelSelected(ArticleListTableCellModel.self)
+            .bind(to: viewModel.selectArticle)
+            .disposed(by: disposeBag)
     }
 
     private func setupTableView() {

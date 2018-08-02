@@ -5,6 +5,7 @@
 //  Created by 櫻井寛海 on 2018/07/27.
 //  Copyright © 2018 Hiromi Sakurai. All rights reserved.
 //
+// swiftlint:disable force_unwrapping
 
 import Foundation
 import UIKit
@@ -18,7 +19,7 @@ final class ViewControllerAssembly: Assembly {
 
     private func registerViewController(container: Container) {
         container.register(ArticleListViewController.self) { _ in
-            // swiftlint:disable force_unwrapping
+
             let apiClient = container.resolve(QiitaClientProtocol.self)!
             let modelMapper = container.resolve(ArticleListModelMapperProtocol.self)!
             let usecase = container.resolve(ArticleListUsecaseProtocol.self, arguments: apiClient, modelMapper)!
@@ -30,6 +31,15 @@ final class ViewControllerAssembly: Assembly {
         container.register(LanguageListViewController.self) { _ in
             let viewModel = container.resolve(LanguageListViewModelProtocol.self)!
             return LanguageListViewController(viewModel: viewModel)
+        }
+
+        container.register(ArticleDetailViewController.self) { (_, id: String) in
+            let apiClient = container.resolve(QiitaClientProtocol.self)!
+            let modelMapper = container.resolve(ArticleDetailModelMapperProtocol.self)!
+            let usecase = container.resolve(ArticleDetailUsecaseProtocol.self, arguments: apiClient, modelMapper, id)!
+            let viewModelMapper = container.resolve(ArticleDetailViewModelMapperProtocol.self)!
+            let viewModel = container.resolve(ArticleDetailViewModelProtocol.self, arguments: usecase, viewModelMapper)!
+            return ArticleDetailViewController(viewModel: viewModel)
         }
     }
 }

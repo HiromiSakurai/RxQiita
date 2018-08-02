@@ -15,6 +15,8 @@ protocol ArticleListViewModelProtocol {
     func updateArticleList(searchQuery: String, isAdditional: Bool)
     var chooseLanguage: PublishRelay<Void> { get }
     var showLanguageList: Observable<Void> { get }
+    var selectArticle: PublishRelay<ArticleListTableCellModel> { get }
+    var showArticle: Observable<String> { get }
 }
 
 final class ArticleListViewModel {
@@ -25,6 +27,8 @@ final class ArticleListViewModel {
 
     let chooseLanguage = PublishRelay<Void>()
     let showLanguageList: Observable<Void>
+    let selectArticle = PublishRelay<ArticleListTableCellModel>()
+    let showArticle: Observable<String>
 
     private let disposeBag = DisposeBag()
 
@@ -33,6 +37,7 @@ final class ArticleListViewModel {
         self.mapper = mapper
         self.dataSource = []
         self.showLanguageList = chooseLanguage.asObservable()
+        self.showArticle = selectArticle.asObservable().map { $0.id }
     }
 }
 

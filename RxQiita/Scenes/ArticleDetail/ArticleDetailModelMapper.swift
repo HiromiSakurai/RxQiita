@@ -9,7 +9,11 @@
 import Foundation
 import QiitaAPIManager
 
-final class ArticleDetailModelMapper {
+protocol ArticleDetailModelMapperProtocol {
+    func transform(entity: Article) -> ArticleDetailModel
+}
+
+final class ArticleDetailModelMapper: ArticleDetailModelMapperProtocol {
 
     func transform(entity: Article) -> ArticleDetailModel {
         return ArticleDetailModel(id: entity.id, url: entity.url)
