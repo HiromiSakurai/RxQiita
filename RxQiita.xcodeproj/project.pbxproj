@@ -56,6 +56,10 @@
 		5DA07764210B5B89008B0343 /* ViewModelAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07763210B5B89008B0343 /* ViewModelAssembly.swift */; };
 		5DA07766210B5E0E008B0343 /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07765210B5E0E008B0343 /* ViewControllerAssembly.swift */; };
 		5DA07768210B614B008B0343 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA07767210B614B008B0343 /* Container.swift */; };
+		5DCD62982112C03C0014A1D7 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD62972112C03C0014A1D7 /* ArticleDetailViewController.swift */; };
+		5DCD629A2112C0B20014A1D7 /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD62992112C0B20014A1D7 /* ArticleDetailViewModel.swift */; };
+		5DCD629C2112C1950014A1D7 /* ArticleDetailViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD629B2112C1950014A1D7 /* ArticleDetailViewModelMapper.swift */; };
+		5DCD629E2112DD5B0014A1D7 /* ArticleDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD629D2112DD5B0014A1D7 /* ArticleDetailCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +125,10 @@
 		5DA07763210B5B89008B0343 /* ViewModelAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembly.swift; sourceTree = "<group>"; };
 		5DA07765210B5E0E008B0343 /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAssembly.swift; sourceTree = "<group>"; };
 		5DA07767210B614B008B0343 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		5DCD62972112C03C0014A1D7 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
+		5DCD62992112C0B20014A1D7 /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
+		5DCD629B2112C1950014A1D7 /* ArticleDetailViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModelMapper.swift; sourceTree = "<group>"; };
+		5DCD629D2112DD5B0014A1D7 /* ArticleDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +187,9 @@
 				5D128B4220FF03CC00005A31 /* ArticleDetailModel.swift */,
 				5D128B4420FF04AC00005A31 /* ArticleDetailModelMapper.swift */,
 				5D128B4920FF09CB00005A31 /* ArticleDetailUsecase.swift */,
+				5DCD62972112C03C0014A1D7 /* ArticleDetailViewController.swift */,
+				5DCD62992112C0B20014A1D7 /* ArticleDetailViewModel.swift */,
+				5DCD629B2112C1950014A1D7 /* ArticleDetailViewModelMapper.swift */,
 			);
 			path = ArticleDetail;
 			sourceTree = "<group>";
@@ -308,6 +319,7 @@
 				5D6A2611211197FF009D5852 /* AppCoordinator.swift */,
 				5D6A261321119909009D5852 /* ArticleListCoordinator.swift */,
 				5D6A26152111DD80009D5852 /* LanguageListCoordinator.swift */,
+				5DCD629D2112DD5B0014A1D7 /* ArticleDetailCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -487,14 +499,17 @@
 			files = (
 				5D128B3920FDAB9800005A31 /* ArticleListModelMapper.swift in Sources */,
 				5D128B4320FF03CC00005A31 /* ArticleDetailModel.swift in Sources */,
+				5DCD629A2112C0B20014A1D7 /* ArticleDetailViewModel.swift in Sources */,
 				5D6A2612211197FF009D5852 /* AppCoordinator.swift in Sources */,
 				5D5AAEFD20F8B163008641B9 /* String+extensions.swift in Sources */,
 				5D128B4520FF04AC00005A31 /* ArticleDetailModelMapper.swift in Sources */,
 				5D1E9B4120F7C597008EEC87 /* ArticleListUsecase.swift in Sources */,
 				5D84465C211055D900F92FE0 /* ReuseIdentifying.swift in Sources */,
 				5D06F7222109DAA600A4FA22 /* Date+extensions.swift in Sources */,
+				5DCD629C2112C1950014A1D7 /* ArticleDetailViewModelMapper.swift in Sources */,
 				5D6A261021118846009D5852 /* BaseCoordinator.swift in Sources */,
 				5D844661211060CB00F92FE0 /* LanguageListViewController.swift in Sources */,
+				5DCD62982112C03C0014A1D7 /* ArticleDetailViewController.swift in Sources */,
 				5D6A26162111DD80009D5852 /* LanguageListCoordinator.swift in Sources */,
 				5D128B4A20FF09CB00005A31 /* ArticleDetailUsecase.swift in Sources */,
 				5D6A261421119909009D5852 /* ArticleListCoordinator.swift in Sources */,
@@ -508,6 +523,7 @@
 				5D06F7282109F27400A4FA22 /* ArticleListViewModel.swift in Sources */,
 				5DA07766210B5E0E008B0343 /* ViewControllerAssembly.swift in Sources */,
 				5D1E9B0620F63EA0008EEC87 /* AppDelegate.swift in Sources */,
+				5DCD629E2112DD5B0014A1D7 /* ArticleDetailCoordinator.swift in Sources */,
 				5D84465E211058DB00F92FE0 /* UITableView+extensions.swift in Sources */,
 				5D06F72A2109FEAB00A4FA22 /* ArticleListTableCellModel.swift in Sources */,
 				5DA07764210B5B89008B0343 /* ViewModelAssembly.swift in Sources */,

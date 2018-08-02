@@ -37,9 +37,22 @@ final class ArticleListCoordinator: BaseCoordinator<Void> {
             })
             .disposed(by: disposeBag)
 
+        articleListVC.viewModel.showArticle
+            .flatMap { [weak self] id -> Observable<Void> in
+                guard let `self` = self else { return .empty() }
+                return self.showArticleDetail(on: articleListVC, id: id)
+            }
+            .subscribe()
+            .disposed(by: disposeBag)
+
         window.makeKeyAndVisible()
         window.rootViewController = navCon
         return Observable.never()
+    }
+
+    private func showArticleDetail(on rootViewController: UIViewController, id: String) -> Observable<Void> {
+        let articleDetailCoordinator = ArticleDetailCoordinator(rootViewController: rootViewController, id: id)
+        return coordinate(to: articleDetailCoordinator)
     }
 
     private func showLanguageList(on rootViewController: UIViewController) -> Observable<String?> {

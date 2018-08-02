@@ -18,13 +18,13 @@ protocol ArticleDetailUsecaseProtocol {
 final class ArticleDetailUsecase {
 
     private let qiitaClient: QiitaClientProtocol
-    private let mapper: ArticleDetailModelMapper
+    private let mapper: ArticleDetailModelMapperProtocol
     private let id: String
 
     private let modelPublishSubject = PublishSubject<ArticleDetailModel>()
     private let disposeBag = DisposeBag()
 
-    init(qiitaClient: QiitaClientProtocol, mapper: ArticleDetailModelMapper, id: String) {
+    init(qiitaClient: QiitaClientProtocol, mapper: ArticleDetailModelMapperProtocol, id: String) {
         self.qiitaClient = qiitaClient
         self.mapper = mapper
         self.id = id
