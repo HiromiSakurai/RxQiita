@@ -19,11 +19,11 @@ final class ArticleListViewController: UIViewController {
 
     // not 'private' to access in coordinator
     let viewModel: ArticleListViewModelProtocol
+    private let dataSource = ArticleListTableDataSource()
     private let disposeBag = DisposeBag()
 
-    private lazy var articleListTableView: UITableView = {
+    lazy var articleListTableView: UITableView = {
         let table = UITableView()
-        table.rowHeight = 100
         return table
     }()
 
@@ -49,31 +49,41 @@ final class ArticleListViewController: UIViewController {
     }
 
     private func bindViewModel() {
-        // swiftlint:disable opening_brace
-        // TODO: refactoring below closure
         viewModel.getArticleListStream()
-            .drive(articleListTableView.rx.items(cellIdentifier: ArticleListTableCell.reuseIdentifier,
-                                                 cellType: ArticleListTableCell.self))
-            { _, element, cell in
-                cell.config(title: element.title, likesCount: element.likesCount, date: element.createdAt)
-            }
+            .drive(articleListTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
         languageButton.rx.tap
             .bind(to: viewModel.chooseLanguage)
             .disposed(by: disposeBag)
 
-        articleListTableView.rx.modelSelected(ArticleListTableCellModel.self)
-            .bind(to: viewModel.selectArticle)
-            .disposed(by: disposeBag)
+        // TODO: not work well😱
+//        articleListTableView.rx.modelSelected(ArticleListTableCellModel.self)
+//            .bind(to: viewModel.selectArticle)
+//            .disposed(by: disposeBag)
     }
 
     private func setupTableView() {
+        articleListTableView.delegate = self
         articleListTableView.register(ArticleListTableCell.self)
     }
 
     private func setupLayout() {
         view.addSubview(articleListTableView)
         articleListTableView.pin.all(view.pin.safeArea)
+    }
+}
+
+extension ArticleListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectArticle.accept(dataSource.items[indexPath.row])
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        viewModel.fetchAdditionalArticlesIfNeeded(currentIndexPath: indexPath)
     }
 }

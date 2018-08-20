@@ -13,4 +13,13 @@ extension UITableView {
     func register<T: UITableViewCell>(_: T.Type) where T: ReuseIdentifying {
         register(T.self, forCellReuseIdentifier: T.reuseIdentifier)
     }
+
+    func register<T: UITableViewHeaderFooterView>(_: T.Type) where T: ReuseIdentifying {
+        register(T.self, forHeaderFooterViewReuseIdentifier: T.reuseIdentifier)
+    }
+
+    func dequeueReusableCellWithIdentifier<T: UITableViewCell>(indexPath: IndexPath) -> T where T: ReuseIdentifying {
+        // swiftlint:disable:next force_cast
+        return dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as! T
+    }
 }

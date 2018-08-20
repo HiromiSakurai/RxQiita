@@ -28,6 +28,6 @@ final class ArticleListViewModelMapper: ArticleListViewModelMapperProtocol {
 
     private func stringFrom(date: Date?) -> String {
         guard let d = date else { return "" }
-        return String(d.year) + "/" + String(d.month) + "/" + String(d.month)
+        return String(d.year) + "/" + String(d.month) + "/" + String(d.day)
     }
 }

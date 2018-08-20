@@ -13,6 +13,7 @@ import RxCocoa
 protocol ArticleListViewModelProtocol {
     func getArticleListStream() -> Driver<[ArticleListTableCellModel]>
     func updateArticleList(searchQuery: String, isAdditional: Bool)
+    func fetchAdditionalArticlesIfNeeded(currentIndexPath: IndexPath)
     var chooseLanguage: PublishRelay<Void> { get }
     var showLanguageList: Observable<Void> { get }
     var selectArticle: PublishRelay<ArticleListTableCellModel> { get }
@@ -20,6 +21,9 @@ protocol ArticleListViewModelProtocol {
 }
 
 final class ArticleListViewModel {
+    private struct Const {
+        static let firstSearchQuery: String = "Swift"
+    }
 
     private let usecase: ArticleListUsecaseProtocol
     private let mapper: ArticleListViewModelMapperProtocol
@@ -39,6 +43,10 @@ final class ArticleListViewModel {
         self.showLanguageList = chooseLanguage.asObservable()
         self.showArticle = selectArticle.asObservable().map { $0.id }
     }
+
+    private func isLastItem(indexPath: IndexPath) -> Bool {
+        return dataSource.count == indexPath.row + 1
+    }
 }
 
 extension ArticleListViewModel: ArticleListViewModelProtocol {
@@ -56,5 +64,10 @@ extension ArticleListViewModel: ArticleListViewModelProtocol {
     func updateArticleList(searchQuery: String, isAdditional: Bool) {
         if !isAdditional { dataSource = [] }
         usecase.updateArticleList(searchQuery: searchQuery, isAdditional: isAdditional)
+    }
+
+    func fetchAdditionalArticlesIfNeeded(currentIndexPath: IndexPath) {
+        guard isLastItem(indexPath: currentIndexPath) else { return }
+        usecase.updateArticleList(searchQuery: "", isAdditional: true)
     }
 }
