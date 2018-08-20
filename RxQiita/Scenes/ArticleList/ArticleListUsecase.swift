@@ -38,8 +38,16 @@ final class ArticleListUsecase {
     }
 
     private func fetchArticleList(searchQuery: String, isAdditional: Bool) {
-        let query: String = isAdditional ? currentQuery : searchQuery
-        let page: Int = isAdditional ? nextPage : Const.firstPageIndex
+        let query: String
+        let page: Int
+        if isAdditional {
+            query = currentQuery
+            page = nextPage
+        } else {
+            currentQuery = searchQuery
+            query = currentQuery
+            page = Const.firstPageIndex
+        }
         qiitaClient.fetchArticles(searchQuery: query, page: page)
             .map { [weak self] articles -> ArticleListModel? in
                 return self?.mapper.transform(articles: articles)

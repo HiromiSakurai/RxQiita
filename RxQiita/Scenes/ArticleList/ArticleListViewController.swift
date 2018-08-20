@@ -22,9 +22,8 @@ final class ArticleListViewController: UIViewController {
     private let dataSource = ArticleListTableDataSource()
     private let disposeBag = DisposeBag()
 
-    private lazy var articleListTableView: UITableView = {
+    lazy var articleListTableView: UITableView = {
         let table = UITableView()
-        //table.rowHeight = 100
         return table
     }()
 
@@ -82,5 +81,9 @@ extension ArticleListViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.selectArticle.accept(dataSource.items[indexPath.row])
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        viewModel.fetchAdditionalArticlesIfNeeded(currentIndexPath: indexPath)
     }
 }
