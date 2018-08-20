@@ -58,10 +58,6 @@ final class ArticleListViewController: UIViewController {
             .bind(to: viewModel.chooseLanguage)
             .disposed(by: disposeBag)
 
-        dataSource.selectedCellModel
-            .bind(to: viewModel.selectArticle)
-            .disposed(by: disposeBag)
-
         // TODO: not work well😱
 //        articleListTableView.rx.modelSelected(ArticleListTableCellModel.self)
 //            .bind(to: viewModel.selectArticle)
@@ -69,12 +65,22 @@ final class ArticleListViewController: UIViewController {
     }
 
     private func setupTableView() {
-        articleListTableView.delegate = dataSource
+        articleListTableView.delegate = self
         articleListTableView.register(ArticleListTableCell.self)
     }
 
     private func setupLayout() {
         view.addSubview(articleListTableView)
         articleListTableView.pin.all(view.pin.safeArea)
+    }
+}
+
+extension ArticleListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectArticle.accept(dataSource.items[indexPath.row])
     }
 }

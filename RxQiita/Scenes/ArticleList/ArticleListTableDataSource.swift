@@ -13,12 +13,8 @@ import RxCocoa
 
 final class ArticleListTableDataSource: NSObject {
     var items: [ArticleListTableCellModel] = []
-    let selectedCellModel: Observable<ArticleListTableCellModel>
-    private let didSelectCell = PublishRelay<ArticleListTableCellModel>()
 
-    override init() {
-        selectedCellModel = didSelectCell.asObservable()
-    }
+    override init() {}
 }
 
 extension ArticleListTableDataSource: UITableViewDataSource {
@@ -30,16 +26,6 @@ extension ArticleListTableDataSource: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier(indexPath: indexPath) as ArticleListTableCell
         cell.config(title: items[indexPath.row].title, likesCount: items[indexPath.row].likesCount, date: items[indexPath.row].createdAt)
         return cell
-    }
-}
-
-extension ArticleListTableDataSource: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelectCell.accept(items[indexPath.row])
     }
 }
 
