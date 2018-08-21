@@ -27,15 +27,11 @@ protocol LanguageListViewModelType {
 final class LanguageListViewModel: LanguageListViewModelType, LanguageListViewModelInputs, LanguageListViewModelOutputs {
 
     let didSelectLanguage: Observable<String>
-
     let didCancel: Observable<Void>
-
     let selectLanguage = PublishRelay<String>()
-
     let cancel = PublishRelay<Void>()
 
     var inputs: LanguageListViewModelInputs { return self }
-
     var outputs: LanguageListViewModelOutputs { return self }
 
     init() {
