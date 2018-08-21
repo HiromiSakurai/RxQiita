@@ -22,6 +22,7 @@
 		5D128B4A20FF09CB00005A31 /* ArticleDetailUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D128B4920FF09CB00005A31 /* ArticleDetailUsecase.swift */; };
 		5D128B4C20FF268E00005A31 /* ArticleDetailUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D128B4B20FF268E00005A31 /* ArticleDetailUsecaseTest.swift */; };
 		5D128B4E20FF2DA900005A31 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D128B4D20FF2DA900005A31 /* RxDataSources.framework */; };
+		5D16EF1F212C140C0042DBEF /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16EF1E212C140C0042DBEF /* ViewModelType.swift */; };
 		5D1E9B0620F63EA0008EEC87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E9B0520F63EA0008EEC87 /* AppDelegate.swift */; };
 		5D1E9B0D20F63EA4008EEC87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D1E9B0C20F63EA4008EEC87 /* Assets.xcassets */; };
 		5D1E9B1020F63EA4008EEC87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1E9B0E20F63EA4008EEC87 /* LaunchScreen.storyboard */; };
@@ -89,6 +90,7 @@
 		5D128B4920FF09CB00005A31 /* ArticleDetailUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailUsecase.swift; sourceTree = "<group>"; };
 		5D128B4B20FF268E00005A31 /* ArticleDetailUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailUsecaseTest.swift; sourceTree = "<group>"; };
 		5D128B4D20FF2DA900005A31 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		5D16EF1E212C140C0042DBEF /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		5D1E9B0220F63EA0008EEC87 /* RxQiita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxQiita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D1E9B0520F63EA0008EEC87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D1E9B0C20F63EA4008EEC87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				5D84465B211055D900F92FE0 /* ReuseIdentifying.swift */,
+				5D16EF1E212C140C0042DBEF /* ViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				5D06F7222109DAA600A4FA22 /* Date+extensions.swift in Sources */,
 				5DCD629C2112C1950014A1D7 /* ArticleDetailViewModelMapper.swift in Sources */,
 				5D6A261021118846009D5852 /* BaseCoordinator.swift in Sources */,
+				5D16EF1F212C140C0042DBEF /* ViewModelType.swift in Sources */,
 				5D844661211060CB00F92FE0 /* LanguageListViewController.swift in Sources */,
 				5DCD62982112C03C0014A1D7 /* ArticleDetailViewController.swift in Sources */,
 				5D6A26162111DD80009D5852 /* LanguageListCoordinator.swift in Sources */,
