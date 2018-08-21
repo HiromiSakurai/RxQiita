@@ -20,7 +20,7 @@ final class ViewModelAssembly: Assembly {
             ArticleListViewModel(usecase: usecase, mapper: mapper)
         }
 
-        container.register(LanguageListViewModelProtocol.self) { _ in
+        container.register(LanguageListViewModelType.self) { _ in
             LanguageListViewModel()
         }
 

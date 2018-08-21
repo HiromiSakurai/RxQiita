@@ -29,7 +29,7 @@ final class ViewControllerAssembly: Assembly {
         }
 
         container.register(LanguageListViewController.self) { _ in
-            let viewModel = container.resolve(LanguageListViewModelProtocol.self)!
+            let viewModel = container.resolve(LanguageListViewModelType.self)!
             return LanguageListViewController(viewModel: viewModel)
         }
 

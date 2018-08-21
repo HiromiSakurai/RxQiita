@@ -14,7 +14,7 @@ import RxCocoa
 final class LanguageListViewController: UIViewController {
 
     // not 'private' to access in coordinator
-    let viewModel: LanguageListViewModelProtocol
+    let viewModel: LanguageListViewModelType
     private let disposeBag = DisposeBag()
 
     private lazy var languageListTableView: UITableView = {
@@ -25,7 +25,7 @@ final class LanguageListViewController: UIViewController {
 
     private let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: nil, action: nil)
 
-    init(viewModel: LanguageListViewModelProtocol) {
+    init(viewModel: LanguageListViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -46,7 +46,7 @@ final class LanguageListViewController: UIViewController {
     private func bindViewModel() {
         // swiftlint:disable opening_brace
         // TODO: refactoring below closure
-        viewModel.getLanguageList()
+        viewModel.outputs.languageList()
             .drive(languageListTableView.rx.items(cellIdentifier: LanguageListTableCell.reuseIdentifier,
                                                   cellType: LanguageListTableCell.self))
             { _, element, cell in
@@ -55,11 +55,11 @@ final class LanguageListViewController: UIViewController {
             .disposed(by: disposeBag)
 
         languageListTableView.rx.modelSelected(String.self)
-            .bind(to: viewModel.selectLanguage)
+            .bind(to: viewModel.inputs.selectLanguage)
             .disposed(by: disposeBag)
 
         cancelButton.rx.tap
-            .bind(to: viewModel.cancel)
+            .bind(to: viewModel.inputs.cancel)
             .disposed(by: disposeBag)
     }
 
