@@ -23,7 +23,7 @@ final class ArticleListCoordinator: BaseCoordinator<Void> {
         let articleListVC = resolver.resolve(ArticleListViewController.self)!
         let navCon = UINavigationController(rootViewController: articleListVC)
 
-        articleListVC.viewModel.showLanguageList
+        articleListVC.viewModel.outputs.showLanguageList
             .flatMap { [weak self] _ -> Observable<String?> in
                 guard let `self` = self else { return .empty() }
                 return self.showLanguageList(on: articleListVC)
@@ -33,11 +33,11 @@ final class ArticleListCoordinator: BaseCoordinator<Void> {
                 return Observable.just(result)
             }
             .subscribe(onNext: { result in
-                articleListVC.viewModel.updateArticleList(searchQuery: result, isAdditional: false)
+                articleListVC.viewModel.inputs.updateArticleList(searchQuery: result, isAdditional: false)
             })
             .disposed(by: disposeBag)
 
-        articleListVC.viewModel.showArticle
+        articleListVC.viewModel.outputs.showArticle
             .flatMap { [weak self] id -> Observable<Void> in
                 guard let `self` = self else { return .empty() }
                 return self.showArticleDetail(on: articleListVC, id: id)
