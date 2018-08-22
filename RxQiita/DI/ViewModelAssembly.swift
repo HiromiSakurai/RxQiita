@@ -24,7 +24,7 @@ final class ViewModelAssembly: Assembly {
             LanguageListViewModel()
         }
 
-        container.register(ArticleDetailViewModelProtocol.self) { (_, usecase: ArticleDetailUsecaseProtocol, mapper: ArticleDetailViewModelMapperProtocol) in
+        container.register(ArticleDetailViewModelType.self) { (_, usecase: ArticleDetailUsecaseProtocol, mapper: ArticleDetailViewModelMapperProtocol) in
             ArticleDetailViewModel(usecase: usecase, mapper: mapper)
         }
     }

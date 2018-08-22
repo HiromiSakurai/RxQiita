@@ -37,7 +37,6 @@ final class LanguageListViewModel: LanguageListViewModelType, LanguageListViewMo
     init() {
         self.didSelectLanguage = selectLanguage.asObservable()
         self.didCancel = cancel.asObservable()
-        //self.languageList = Driver.just(makeLanguageList)
     }
 
     func languageList() -> Driver<[String]> {

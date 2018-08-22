@@ -14,7 +14,7 @@ import PinLayout
 
 class ArticleDetailViewController: UIViewController {
 
-    let viewModle: ArticleDetailViewModelProtocol
+    let viewModle: ArticleDetailViewModelType
     private let disposeBag = DisposeBag()
 
     private lazy var webView: WKWebView = {
@@ -22,7 +22,7 @@ class ArticleDetailViewController: UIViewController {
         return wv
     }()
 
-    init(viewModel: ArticleDetailViewModelProtocol) {
+    init(viewModel: ArticleDetailViewModelType) {
         self.viewModle = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,11 +35,11 @@ class ArticleDetailViewController: UIViewController {
         super.viewDidLoad()
         bindViewModel()
         setupLayout()
-        viewModle.updateArticleDetail()
+        viewModle.inputs.updateArticleDetail()
     }
 
     private func bindViewModel() {
-        viewModle.getArticleDetailURLStream()
+        viewModle.outputs.getArticleDetailURLStream()
             .drive(onNext: { [weak self] url in
                 let urlRequest = URLRequest(url: url)
                 self?.webView.load(urlRequest)
