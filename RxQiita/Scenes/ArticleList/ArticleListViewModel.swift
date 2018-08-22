@@ -10,17 +10,26 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol ArticleListViewModelProtocol {
-    func getArticleListStream() -> Driver<[ArticleListTableCellModel]>
+protocol ArticleListViewModelInputs {
     func updateArticleList(searchQuery: String, isAdditional: Bool)
     func fetchAdditionalArticlesIfNeeded(currentIndexPath: IndexPath)
     var chooseLanguage: PublishRelay<Void> { get }
-    var showLanguageList: Observable<Void> { get }
     var selectArticle: PublishRelay<ArticleListTableCellModel> { get }
+}
+
+protocol ArticleListViewModelOutputs {
+    func getArticleListStream() -> Driver<[ArticleListTableCellModel]>
+    var showLanguageList: Observable<Void> { get }
     var showArticle: Observable<String> { get }
 }
 
-final class ArticleListViewModel {
+protocol ArticleListViewModelType {
+    var inputs: ArticleListViewModelInputs { get }
+    var outputs: ArticleListViewModelOutputs { get }
+}
+
+final class ArticleListViewModel: ArticleListViewModelType, ArticleListViewModelInputs, ArticleListViewModelOutputs {
+
     private struct Const {
         static let firstSearchQuery: String = "Swift"
     }
@@ -34,6 +43,9 @@ final class ArticleListViewModel {
     let selectArticle = PublishRelay<ArticleListTableCellModel>()
     let showArticle: Observable<String>
 
+    var inputs: ArticleListViewModelInputs { return self }
+    var outputs: ArticleListViewModelOutputs { return self }
+
     private let disposeBag = DisposeBag()
 
     init(usecase: ArticleListUsecaseProtocol, mapper: ArticleListViewModelMapperProtocol) {
@@ -43,13 +55,6 @@ final class ArticleListViewModel {
         self.showLanguageList = chooseLanguage.asObservable()
         self.showArticle = selectArticle.asObservable().map { $0.id }
     }
-
-    private func isLastItem(indexPath: IndexPath) -> Bool {
-        return dataSource.count == indexPath.row + 1
-    }
-}
-
-extension ArticleListViewModel: ArticleListViewModelProtocol {
 
     func getArticleListStream() -> Driver<[ArticleListTableCellModel]> {
         return usecase.getArticleListStream()
@@ -69,5 +74,9 @@ extension ArticleListViewModel: ArticleListViewModelProtocol {
     func fetchAdditionalArticlesIfNeeded(currentIndexPath: IndexPath) {
         guard isLastItem(indexPath: currentIndexPath) else { return }
         usecase.updateArticleList(searchQuery: "", isAdditional: true)
+    }
+
+    private func isLastItem(indexPath: IndexPath) -> Bool {
+        return dataSource.count == indexPath.row + 1
     }
 }

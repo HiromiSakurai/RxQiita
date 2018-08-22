@@ -18,7 +18,7 @@ final class ArticleListViewController: UIViewController {
     }
 
     // not 'private' to access in coordinator
-    let viewModel: ArticleListViewModelProtocol
+    let viewModel: ArticleListViewModelType
     private let dataSource = ArticleListTableDataSource()
     private let disposeBag = DisposeBag()
 
@@ -29,7 +29,7 @@ final class ArticleListViewController: UIViewController {
 
     private let languageButton = UIBarButtonItem(barButtonSystemItem: .organize, target: nil, action: nil)
 
-    init(viewModel: ArticleListViewModelProtocol) {
+    init(viewModel: ArticleListViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -45,16 +45,16 @@ final class ArticleListViewController: UIViewController {
         bindViewModel()
         setupTableView()
         setupLayout()
-        viewModel.updateArticleList(searchQuery: Const.firstSearchQuery, isAdditional: false)
+        viewModel.inputs.updateArticleList(searchQuery: Const.firstSearchQuery, isAdditional: false)
     }
 
     private func bindViewModel() {
-        viewModel.getArticleListStream()
+        viewModel.outputs.getArticleListStream()
             .drive(articleListTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
         languageButton.rx.tap
-            .bind(to: viewModel.chooseLanguage)
+            .bind(to: viewModel.inputs.chooseLanguage)
             .disposed(by: disposeBag)
 
         // TODO: not work well😱
@@ -80,10 +80,10 @@ extension ArticleListViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.selectArticle.accept(dataSource.items[indexPath.row])
+        viewModel.inputs.selectArticle.accept(dataSource.items[indexPath.row])
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        viewModel.fetchAdditionalArticlesIfNeeded(currentIndexPath: indexPath)
+        viewModel.inputs.fetchAdditionalArticlesIfNeeded(currentIndexPath: indexPath)
     }
 }

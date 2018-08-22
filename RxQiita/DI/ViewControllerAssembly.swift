@@ -24,12 +24,12 @@ final class ViewControllerAssembly: Assembly {
             let modelMapper = container.resolve(ArticleListModelMapperProtocol.self)!
             let usecase = container.resolve(ArticleListUsecaseProtocol.self, arguments: apiClient, modelMapper)!
             let viewModelMapper = container.resolve(ArticleListViewModelMapperProtocol.self)!
-            let viewModel = container.resolve(ArticleListViewModelProtocol.self, arguments: usecase, viewModelMapper)!
+            let viewModel = container.resolve(ArticleListViewModelType.self, arguments: usecase, viewModelMapper)!
             return ArticleListViewController(viewModel: viewModel)
         }
 
         container.register(LanguageListViewController.self) { _ in
-            let viewModel = container.resolve(LanguageListViewModelProtocol.self)!
+            let viewModel = container.resolve(LanguageListViewModelType.self)!
             return LanguageListViewController(viewModel: viewModel)
         }
 
@@ -38,7 +38,7 @@ final class ViewControllerAssembly: Assembly {
             let modelMapper = container.resolve(ArticleDetailModelMapperProtocol.self)!
             let usecase = container.resolve(ArticleDetailUsecaseProtocol.self, arguments: apiClient, modelMapper, id)!
             let viewModelMapper = container.resolve(ArticleDetailViewModelMapperProtocol.self)!
-            let viewModel = container.resolve(ArticleDetailViewModelProtocol.self, arguments: usecase, viewModelMapper)!
+            let viewModel = container.resolve(ArticleDetailViewModelType.self, arguments: usecase, viewModelMapper)!
             return ArticleDetailViewController(viewModel: viewModel)
         }
     }
