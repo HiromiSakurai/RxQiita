@@ -17,4 +17,3 @@ final class RxUtil {
         return Observable<T>.just(input)
     }
 }
-
