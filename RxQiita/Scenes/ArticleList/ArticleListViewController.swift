@@ -15,6 +15,8 @@ final class ArticleListViewController: UIViewController {
 
     private struct Const {
         static let firstSearchQuery: String = "Swift"
+        static let tableCellHeight: CGFloat = 100
+        static let tableFooterHeight: CGFloat = 44
     }
 
     // not 'private' to access in coordinator
@@ -24,7 +26,14 @@ final class ArticleListViewController: UIViewController {
 
     lazy var articleListTableView: UITableView = {
         let table = UITableView()
+        table.tableFooterView = tableFooterView
         return table
+    }()
+
+    private lazy var tableFooterView: ArticleListTableFooterView = {
+        let footer = ArticleListTableFooterView()
+        footer.startAnimating()
+        return footer
     }()
 
     private let languageButton = UIBarButtonItem(barButtonSystemItem: .organize, target: nil, action: nil)
@@ -66,17 +75,19 @@ final class ArticleListViewController: UIViewController {
     private func setupTableView() {
         articleListTableView.delegate = self
         articleListTableView.register(ArticleListTableCell.self)
+        articleListTableView.register(ArticleListTableFooterView.self)
     }
 
     private func setupLayout() {
         view.addSubview(articleListTableView)
         articleListTableView.pin.all(view.pin.safeArea)
+        tableFooterView.pin.width(of: articleListTableView).height(Const.tableFooterHeight)
     }
 }
 
 extension ArticleListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return Const.tableCellHeight
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -84,6 +95,11 @@ extension ArticleListViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        viewModel.inputs.fetchAdditionalArticlesIfNeeded(currentIndexPath: indexPath)
+        let lastSectionIndex = tableView.numberOfSections - 1
+        let lastRowIndex = tableView.numberOfRows(inSection: lastSectionIndex) - 1
+        if indexPath.section == lastSectionIndex && indexPath.row == lastRowIndex {
+            tableView.tableFooterView?.isHidden = false
+            viewModel.inputs.fetchAdditionalArticlesIfNeeded(currentIndexPath: indexPath)
+        }
     }
 }
