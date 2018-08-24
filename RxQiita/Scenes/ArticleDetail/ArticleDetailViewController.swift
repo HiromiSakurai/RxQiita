@@ -14,12 +14,29 @@ import PinLayout
 
 class ArticleDetailViewController: UIViewController {
 
+    private enum Const {
+        enum ObserverKey {
+            static let loading = "loading"
+            static let estimatedProgress = "estimatedProgress"
+        }
+    }
+
     let viewModle: ArticleDetailViewModelType
     private let disposeBag = DisposeBag()
 
     private lazy var webView: WKWebView = {
         let wv = WKWebView()
         return wv
+    }()
+
+    private lazy var progressBar: UIProgressView = {
+        let bar = UIProgressView()
+        bar.frame = CGRect(x: 0, //swiftlint:disable:next force_unwrapping
+                           y: self.navigationController!.navigationBar.frame.size.height - 2,
+                           width: self.view.frame.size.width,
+                           height: 10)
+        bar.progressViewStyle = .bar
+        return bar
     }()
 
     init(viewModel: ArticleDetailViewModelType) {
@@ -34,6 +51,7 @@ class ArticleDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
+        setupProgressBar()
         setupLayout()
         viewModle.inputs.updateArticleDetail()
     }
@@ -47,8 +65,46 @@ class ArticleDetailViewController: UIViewController {
             .disposed(by: disposeBag)
     }
 
+    private func setupProgressBar() {
+        let loadingObservable = webView.rx.observe(Bool.self, Const.ObserverKey.loading)
+            .flatMap(RxUtil.filterNil)
+            .share()
+
+        loadingObservable
+            .map { return !$0 }
+            .observeOn(MainScheduler.instance)
+            .bind(to: progressBar.rx.isHidden)
+            .disposed(by: disposeBag)
+
+        loadingObservable
+            .bind(to: UIApplication.shared.rx.isNetworkActivityIndicatorVisible)
+            .disposed(by: disposeBag)
+
+        webView.rx.observe(Double.self, Const.ObserverKey.estimatedProgress)
+            .flatMap(RxUtil.filterNil)
+            .map { return Float($0) }
+            .observeOn(MainScheduler.instance)
+            .bind(to: progressBar.rx.progress)
+            .disposed(by: disposeBag)
+    }
+
+//    private func addObserver() {
+//        webView.addObserver(self, forKeyPath: Const.ObserverKey.loading, options: .new, context: nil)
+//        webView.addObserver(self, forKeyPath: Const.ObserverKey.estimatedProgress, options: .new, context: nil)
+//    }
+//
+//    private func removeObserver() {
+//        webView.removeObserver(self, forKeyPath: Const.ObserverKey.loading)
+//        webView.removeObserver(self, forKeyPath: Const.ObserverKey.estimatedProgress)
+//    }
+
+//    override func observe<Value>(_ keyPath: KeyPath<ArticleDetailViewController, Value>, options: NSKeyValueObservingOptions, changeHandler: @escaping (ArticleDetailViewController, NSKeyValueObservedChange<Value>) -> Void) -> NSKeyValueObservation {
+//        <#code#>
+//    }
+
     private func setupLayout() {
         view.addSubview(webView)
+        navigationController?.navigationBar.addSubview(progressBar)
         webView.pin.all(view.pin.safeArea)
     }
 }
