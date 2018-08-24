@@ -88,20 +88,6 @@ class ArticleDetailViewController: UIViewController {
             .disposed(by: disposeBag)
     }
 
-//    private func addObserver() {
-//        webView.addObserver(self, forKeyPath: Const.ObserverKey.loading, options: .new, context: nil)
-//        webView.addObserver(self, forKeyPath: Const.ObserverKey.estimatedProgress, options: .new, context: nil)
-//    }
-//
-//    private func removeObserver() {
-//        webView.removeObserver(self, forKeyPath: Const.ObserverKey.loading)
-//        webView.removeObserver(self, forKeyPath: Const.ObserverKey.estimatedProgress)
-//    }
-
-//    override func observe<Value>(_ keyPath: KeyPath<ArticleDetailViewController, Value>, options: NSKeyValueObservingOptions, changeHandler: @escaping (ArticleDetailViewController, NSKeyValueObservedChange<Value>) -> Void) -> NSKeyValueObservation {
-//        <#code#>
-//    }
-
     private func setupLayout() {
         view.addSubview(webView)
         navigationController?.navigationBar.addSubview(progressBar)
