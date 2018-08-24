@@ -37,6 +37,7 @@
 		5D1E9B3D20F64F3A008EEC87 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1E9B3C20F64F3A008EEC87 /* Swinject.framework */; };
 		5D1E9B4120F7C597008EEC87 /* ArticleListUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E9B4020F7C597008EEC87 /* ArticleListUsecase.swift */; };
 		5D1E9B4320F7CAB8008EEC87 /* ArticleListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E9B4220F7CAB8008EEC87 /* ArticleListModel.swift */; };
+		5D27135C21302A2700E76D70 /* RxUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D27135B21302A2700E76D70 /* RxUtil.swift */; };
 		5D2713592130115C00E76D70 /* ArticleListTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2713582130115C00E76D70 /* ArticleListTableFooterView.swift */; };
 		5D3C0853211B05710059654C /* ArticleListTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3C0852211B05710059654C /* ArticleListTableDataSource.swift */; };
 		5D5AAEFD20F8B163008641B9 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5AAEFC20F8B163008641B9 /* String+extensions.swift */; };
@@ -110,6 +111,7 @@
 		5D1E9B3C20F64F3A008EEC87 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 		5D1E9B4020F7C597008EEC87 /* ArticleListUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListUsecase.swift; sourceTree = "<group>"; };
 		5D1E9B4220F7CAB8008EEC87 /* ArticleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListModel.swift; sourceTree = "<group>"; };
+		5D27135B21302A2700E76D70 /* RxUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUtil.swift; sourceTree = "<group>"; };
 		5D2713582130115C00E76D70 /* ArticleListTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableFooterView.swift; sourceTree = "<group>"; };
 		5D3C0852211B05710059654C /* ArticleListTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableDataSource.swift; sourceTree = "<group>"; };
 		5D5AAEFC20F8B163008641B9 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				5D1E9B3E20F7C272008EEC87 /* Scenes */,
 				5D5AAEFB20F8AFBD008641B9 /* Extensions */,
 				5D84465A2110546F00F92FE0 /* Protocols */,
+				5D27135A213029FC00E76D70 /* Utils */,
 				5D1E9B0520F63EA0008EEC87 /* AppDelegate.swift */,
 				5D1E9B0C20F63EA4008EEC87 /* Assets.xcassets */,
 				5D1E9B0E20F63EA4008EEC87 /* LaunchScreen.storyboard */,
@@ -295,6 +298,14 @@
 				5D2713582130115C00E76D70 /* ArticleListTableFooterView.swift */,
 			);
 			path = ArticleList;
+			sourceTree = "<group>";
+		};
+		5D27135A213029FC00E76D70 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5D27135B21302A2700E76D70 /* RxUtil.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		5D5AAEFB20F8AFBD008641B9 /* Extensions */ = {
@@ -530,6 +541,7 @@
 				5D06F7282109F27400A4FA22 /* ArticleListViewModel.swift in Sources */,
 				5DA07766210B5E0E008B0343 /* ViewControllerAssembly.swift in Sources */,
 				5D1E9B0620F63EA0008EEC87 /* AppDelegate.swift in Sources */,
+				5D27135C21302A2700E76D70 /* RxUtil.swift in Sources */,
 				5DCD629E2112DD5B0014A1D7 /* ArticleDetailCoordinator.swift in Sources */,
 				5D84465E211058DB00F92FE0 /* UITableView+extensions.swift in Sources */,
 				5D3C0853211B05710059654C /* ArticleListTableDataSource.swift in Sources */,
