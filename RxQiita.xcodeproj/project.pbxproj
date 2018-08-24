@@ -38,6 +38,7 @@
 		5D1E9B4120F7C597008EEC87 /* ArticleListUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E9B4020F7C597008EEC87 /* ArticleListUsecase.swift */; };
 		5D1E9B4320F7CAB8008EEC87 /* ArticleListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E9B4220F7CAB8008EEC87 /* ArticleListModel.swift */; };
 		5D27135C21302A2700E76D70 /* RxUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D27135B21302A2700E76D70 /* RxUtil.swift */; };
+		5D2713592130115C00E76D70 /* ArticleListTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D2713582130115C00E76D70 /* ArticleListTableFooterView.swift */; };
 		5D3C0853211B05710059654C /* ArticleListTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3C0852211B05710059654C /* ArticleListTableDataSource.swift */; };
 		5D5AAEFD20F8B163008641B9 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5AAEFC20F8B163008641B9 /* String+extensions.swift */; };
 		5D5AAF0C20F92098008641B9 /* ArticleListUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5AAF0B20F92098008641B9 /* ArticleListUsecaseTest.swift */; };
@@ -111,6 +112,7 @@
 		5D1E9B4020F7C597008EEC87 /* ArticleListUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListUsecase.swift; sourceTree = "<group>"; };
 		5D1E9B4220F7CAB8008EEC87 /* ArticleListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListModel.swift; sourceTree = "<group>"; };
 		5D27135B21302A2700E76D70 /* RxUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUtil.swift; sourceTree = "<group>"; };
+		5D2713582130115C00E76D70 /* ArticleListTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableFooterView.swift; sourceTree = "<group>"; };
 		5D3C0852211B05710059654C /* ArticleListTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTableDataSource.swift; sourceTree = "<group>"; };
 		5D5AAEFC20F8B163008641B9 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		5D5AAF0B20F92098008641B9 /* ArticleListUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleListUsecaseTest.swift; path = RxQiitaTests/ArticleList/ArticleListUsecaseTest.swift; sourceTree = SOURCE_ROOT; };
@@ -293,6 +295,7 @@
 				5DA0775C210AD36B008B0343 /* ArticleListViewController.swift */,
 				5DA0775E210AE8A0008B0343 /* ArticleListTableCell.swift */,
 				5D3C0852211B05710059654C /* ArticleListTableDataSource.swift */,
+				5D2713582130115C00E76D70 /* ArticleListTableFooterView.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				5D6A26162111DD80009D5852 /* LanguageListCoordinator.swift in Sources */,
 				5D128B4A20FF09CB00005A31 /* ArticleDetailUsecase.swift in Sources */,
 				5D6A261421119909009D5852 /* ArticleListCoordinator.swift in Sources */,
+				5D2713592130115C00E76D70 /* ArticleListTableFooterView.swift in Sources */,
 				5DA07768210B614B008B0343 /* Container.swift in Sources */,
 				5DA07762210B519D008B0343 /* UsecaseAssembly.swift in Sources */,
 				5D06F7202109D86B00A4FA22 /* ArticleListViewModelMapper.swift in Sources */,
